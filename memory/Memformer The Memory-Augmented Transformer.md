@@ -1,0 +1,55 @@
+# Memformer: The Memory-Augmented Transformer
+
+论文地址：
+
+- [https://arxiv.org/abs/2010.06891](https://arxiv.org/abs/2010.06891)
+
+
+
+## 整体思路以及计算方式
+
+Transformer + 循环，论文只使用在Encoder-Decoder结构中：
+
+- 给定循环次数$T$，输入$x\in \mathbb R^{n\times d}$
+- 初始化$m\in \mathbb R^{m\times d}$
+- 对于$x$，得到输出$\mathrm{Encoder}(x, m)\in \mathbb R^{n\times d}$
+- $\text{for i = 1,...,T}$:
+  - $m= f(\mathrm{MHA}(m, x, x)) \in \mathbb R^{m\times d}$
+
+
+
+## 时间复杂度
+
+依然是标准Attention的计算方式，但这里涉及到循环，所以时间复杂度为$O(nmTd)$。
+
+
+
+## 训练以及loss
+
+引入MRBP的训练方式，具体见论文。
+
+
+
+## 代码
+
+[https://github.com/lucidrains/memformer](https://github.com/lucidrains/memformer)
+
+
+
+## 实验以及适用场景
+
+单向双向模型均适用；论文里只测试了lm（单向模型），效果有所提升。
+
+
+
+## 细节
+
+$m$不在计算图内。
+
+
+
+## 简评
+
+总结：
+
+- 本质上就是RNN，不会进行复现；
