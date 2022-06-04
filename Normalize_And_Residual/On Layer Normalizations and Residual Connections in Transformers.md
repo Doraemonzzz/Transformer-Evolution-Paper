@@ -1,0 +1,57 @@
+# On Layer Normalizations and Residual Connections in Transformers
+
+论文地址：
+
+- [https://arxiv.org/abs/2206.00330](https://arxiv.org/abs/2206.00330)
+
+
+
+## 整体思路以及计算方式
+
+该论文尝试解决Transformer中PostNorm比PreNorm更难收敛的问题，首先回顾PostNorm和PreNorm：
+
+- $\operatorname{PostLN}(x)=\mathrm{LN}(x+\mathcal{F}(x))$
+- $\operatorname{PreLN}(x)=x+\mathcal{F}(\operatorname{LN}(x))$
+
+这里$\mathcal F$是$\mathrm{MHA}$和$\mathrm{FFN}$。
+
+作者经过分析，当层数过多时，PostNorm会产生梯度消失的问题，导致模型无法收敛；但是在浅层情形下，PostNorm效果比PreNorm效果更好。因此，作者提出一个折中方案，称为B2T，具体方式是再增加一个残差连接：
+
+- $y_1 =\mathrm{LN}(x+\mathrm{MHA}(x))$
+- $y_2 =x+\mathrm{LN}(y_1+\mathrm{FFN}(y_1))$
+
+
+
+## 时间复杂度
+
+不考虑。
+
+
+
+## 训练以及loss
+
+不考虑。
+
+
+
+## 代码
+
+无，但是实现起来很简单。
+
+
+
+## 实验以及适用场景
+
+适用所有场景，不过根据作者的实验，该方法在浅层时性能依然不如PostNorm，只有在层数较大时候才起作用，效果好于PreNorm。
+
+
+
+## 细节
+
+无。
+
+
+
+## 简评
+
+如果从梯度角度分析，作者的方案是合理的，但是无法解释浅层效果依然不如PostNorm的情形；但作为一个让深层Transformer更容易训练的方案，是值得尝试的。

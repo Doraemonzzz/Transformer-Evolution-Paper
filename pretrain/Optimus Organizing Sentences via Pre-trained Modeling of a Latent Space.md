@@ -1,0 +1,72 @@
+# Optimus: Organizing Sentences via Pre-trained Modeling of a Latent Space
+
+论文地址：
+
+- [https://arxiv.org/abs/2004.04092](https://arxiv.org/abs/2004.04092)
+
+参考资料：
+
+- [https://zhuanlan.zhihu.com/p/143517152](https://zhuanlan.zhihu.com/p/143517152)
+
+
+
+## 整体思路以及计算方式
+
+利用VAE的思想训练LM，本质上是Encoder-Decoder结构，整体思路如下。
+
+首先将LM的目标改为条件LM，$z$表示隐变量：
+$$
+p_{\boldsymbol{\theta}}(\boldsymbol{x} \mid \boldsymbol{z})=\prod_{t=1}^{T} p_{\boldsymbol{\theta}}\left(x_{t} \mid x_{<t}, \boldsymbol{z}\right)
+$$
+损失函数为：
+$$
+\begin{aligned}
+\mathcal{L}_{\beta}&=\mathcal{L}_{E}+\beta \mathcal{L}_{R} \\
+
+\mathcal{L}_{E} &=-\mathbb{E}_{q_{\boldsymbol{\phi}}(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log p_{\boldsymbol{\theta}}(\boldsymbol{x} \mid \boldsymbol{z})\right] \\
+\mathcal{L}_{R} &=\operatorname{KL}\left(q_{\phi}(\boldsymbol{z} \mid \boldsymbol{x}) \| p(\boldsymbol{z})\right)
+
+\end{aligned}
+$$
+论文中$z$是通过Encoder（BERT）计算，然后输入给Decoder（GPT），最后得到结果，使用$z$的方式有两种：
+
+- Memory：相当于给每一层增加一个token，$\boldsymbol{h}_{\mathrm{Mem}}=\mathbf{W}_{\mathrm{M}} \boldsymbol{z}$
+- Embedding：直接和embedding相加，$\boldsymbol{h}_{\mathrm{Emb}}^{\prime}=\boldsymbol{h}_{\mathrm{Emb}}+\mathbf{W}_{\mathrm{D} \boldsymbol{z}}$
+
+
+
+
+
+## 时间复杂度
+
+因为是预训练方式，所以不考虑时间复杂度。
+
+
+
+## 训练以及loss
+
+见之前讨论。
+
+
+
+## 代码
+
+- [https://github.com/ChunyuanLI/Optimus](https://github.com/ChunyuanLI/Optimus)
+
+
+
+## 实验以及适用场景
+
+是一种预训练方式，论文和GPT2进行了对比，提升了一些效果。
+
+
+
+## 细节
+
+暂无。
+
+
+
+## 简评
+
+性能提升的并不明显，暂时不考虑复现。

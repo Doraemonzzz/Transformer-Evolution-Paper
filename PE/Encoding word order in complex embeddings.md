@@ -1,0 +1,89 @@
+# Encoding word order in complex embeddings
+
+论文地址：
+
+- https://arxiv.org/abs/1912.12333
+
+参考资料：
+
+- [https://mp.weixin.qq.com/s?__biz=MzIxMzkwNjM2NQ==&mid=2247484015&idx=1&sn=7e79cf7f2b3abe51b82c4a8beacdf195&chksm=97aee4bda0d96dab57db412e7c9f51e7e9bd5d9d17742f2a522f2dbc881c77fb59183c098d04&scene=21#wechat_redirect](https://mp.weixin.qq.com/s?__biz=MzIxMzkwNjM2NQ==&mid=2247484015&idx=1&sn=7e79cf7f2b3abe51b82c4a8beacdf195&chksm=97aee4bda0d96dab57db412e7c9f51e7e9bd5d9d17742f2a522f2dbc881c77fb59183c098d04&scene=21#wechat_redirect)
+- [https://openreview.net/forum?id=Hke-WTVtwr](https://openreview.net/forum?id=Hke-WTVtwr)
+
+
+
+## 整体思路以及计算方式
+
+论文给出新的位置编码方式，整体思路如下。
+
+传统使用位置编码的形式为：
+$$
+f(j, p o s)=f_{w e}(j)+f_{p e}(p o s)
+$$
+其中$j$表示词的index，pos表示该词对应的位置。作者认为这种方式无法表示相对位置关系，给出了另一种位置编码方式为：
+$$
+f(j, {pos})={g}_{j}({pos})
+$$
+为了给出合理的位置编码，作者提出了两个位置编码应该满足的形式：
+
+1. 存在函数$w$，满足：
+   $$
+   g(pos+n)=w(n)g(pos)
+   $$
+
+2. 位置函数$g$有界：
+   $$
+   \exists \delta \in \mathbb{R}^{+}, \forall {pos} \in \mathbb{N},|g({pos})| \leq \delta
+   $$
+
+满足上述两个条件的解为：
+$$
+g(pos)=z_{2} z_{1}^{pos} \text { for } z_{1}, z_{2} \in \mathbb{C} \text { with }\left|z_{1}\right| \leq 1
+$$
+利用复数表示，可得
+$$
+g(pos)=z_{2} z_{1}^{pos }=r_{2} e^{i \theta_{2}}\left(r_{1} e^{i \theta_{1}}\right)^{pos }=r_{2} r_{1}^{pos } e^{i\left(\theta_{2}+\theta_{1}  pos \right)} \text { subject to }\left|r_{1}\right| \leq 1
+$$
+特别的，取$r_1=1$，那么上式可以化简为：
+$$
+g(pos)=r_{2}e^{i\left(\theta_{2}+\theta_{1}  pos \right)}\triangleq r e^{i(\omega {pos}+\theta)}
+$$
+可学习的参数为：
+$$
+r, w, \theta
+$$
+
+
+## 时间复杂度
+
+假设原始的position embedding形状为$L\times D$，那么Complex Embedding的参数数量为$3\times L\times D$（因为涉及到$r,w ,\theta$），所以该方法会增加空间复杂度；另外，由于复数的分为实部和虚部，所以计算的时候时间复杂度会乘以2。
+
+
+
+## 训练以及loss
+
+不变。
+
+
+
+## 代码
+
+- [https://github.com/iclr-complex-order/complex-order](https://github.com/iclr-complex-order/complex-order)
+- [https://github.com/zhaodongh/Encoding-Word-Order-in-Complex-valued-Embedding](https://github.com/zhaodongh/Encoding-Word-Order-in-Complex-valued-Embedding)
+
+
+
+## 实验以及适用场景
+
+适用于所有场景，作者测了LM，机器翻译以及分类任务，均带来一定提升。
+
+
+
+## 细节
+
+暂无。
+
+
+
+## 简评
+
+作者给的思路很简洁，也能带来一定提升，值得进行复现。

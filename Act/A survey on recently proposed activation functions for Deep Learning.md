@@ -1,0 +1,47 @@
+# A survey on recently proposed activation functions for Deep Learning
+
+论文地址：
+
+- https://arxiv.org/abs/2204.02921
+
+
+
+## 简评
+
+论文介绍了一些激活函数，但是没有给出实验结果，这里对不熟悉的激活函数做一个记录。
+
+1. Swish
+   $$
+   f(x)=x \times \operatorname{sigmoid}(\beta x)
+   $$
+
+2. Mish
+   $$
+   f(x)=x \tanh (\operatorname{softplus}(x))
+   $$
+
+3. GCU
+   $$
+   C(z)=z \times \cos z
+   $$
+
+4. Non-Monotonic Cubic Unit (NCU)
+   $$
+   f(z)=z-z^{3}
+   $$
+
+5. Shifted Quadratic Unit (SQU)
+   $$
+   f(z)=z^{2}+z
+   $$
+
+6. Decaying Sine Unit (DSU)
+   $$
+   f(z)=\frac{\pi}{2}(\operatorname{sinc}(z-\pi)-\operatorname{sinc}(z+\pi))
+   $$
+
+7. Shifted Sinc Unit (SSU)
+   $$
+   f(z)=\pi \operatorname{sinc}(z-\pi)
+   $$
+

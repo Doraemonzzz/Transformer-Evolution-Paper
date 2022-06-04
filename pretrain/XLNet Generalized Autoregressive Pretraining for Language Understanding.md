@@ -1,0 +1,105 @@
+# XLNet: Generalized Autoregressive Pretraining for Language Understanding
+
+论文地址：
+
+- [https://arxiv.org/abs/1906.08237](https://arxiv.org/abs/1906.08237)
+
+参考资料：
+
+- [https://peijun.rocks/2021/12/18/fa646ceb.html/](https://peijun.rocks/2021/12/18/fa646ceb.html/)
+- [https://zhuanlan.zhihu.com/p/89712347](https://zhuanlan.zhihu.com/p/89712347)
+- [https://bbs.dian.org.cn/topic/975/%E8%AF%A6%E8%A7%A3xlnet-generalized-autoregressive-pretraining-for-language-understanding%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0](https://bbs.dian.org.cn/topic/975/%E8%AF%A6%E8%A7%A3xlnet-generalized-autoregressive-pretraining-for-language-understanding%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0)
+
+
+
+## 整体思路以及计算方式
+
+XLNET给出一种新的预训练方式，结合了AR(GPT)，AE(Bert)的特点。
+
+给定句子$\mathrm{x}=\left[x_{1}, \cdots, x_{T}\right]$，AR语言模型的目标为：
+$$
+\max _{\theta} \log p_{\theta}(\mathrm{x})=\sum_{t=1}^{T} \log p_{\theta}\left(x_{t} \mid \mathrm{x}_{<t}\right)=\sum_{t=1}^{T} \log \frac{\exp \left(h_{\theta}\left(\mathrm{x}_{1: t-1}\right)^{\top} e\left(x_{t}\right)\right)}{\sum_{x^{\prime}} \exp \left(h_{\theta}\left(\mathrm{x}_{1: t-1}\right)^{\top} e\left(x^{\prime}\right)\right)}
+$$
+AE语言模型的目标为：
+$$
+\max _{\theta} \log p_{\theta}(\overline{\mathrm{x}} \mid \hat{\mathrm{x}}) \approx \sum_{t=1}^{T} m_{t} \log p_{\theta}\left(x_{t} \mid \hat{\mathrm{x}}\right)=\sum_{t=1}^{T} m_{t} \log \frac{\exp \left(H_{\theta}(\hat{\mathrm{x}})_{t}^{\top} e\left(x_{t}\right)\right)}{\sum_{x^{\prime}} \exp \left(H_{\theta}(\hat{\mathrm{x}})_{t}^{\top} e\left(x^{\prime}\right)\right)}
+$$
+其中$m_t=1$表示$x_t$被mask。
+
+两者的缺点是：
+
+- AE模型有独立性假设；
+- AE模型在训练的时候有噪声，在测试的时候没有噪声；
+- AR模型只能看到单侧信息；
+
+为了解决这点，论文提出了Permutation Language Modeling，即对长度为$T$的句子，考虑全部$T!$种排列：
+$$
+\max _{\theta} \quad \mathbb{E}_{\mathrm{z} \sim \mathcal{Z}_{T}}\left[\sum_{t=1}^{T} \log p_{\theta}\left(x_{z_{t}} \mid \mathrm{x}_{\mathrm{z}<t}\right)\right]
+$$
+其中$\mathcal Z_T$表示长度为$T$的全排列集合。
+
+下一步是计算$p_{\theta}\left(x_{z_{t}} \mid \mathrm{x}_{\mathrm{z}<t}\right)$，模型的计算方式为：
+$$
+p_{\theta}\left(X_{z_{t}}=x \mid \mathrm{x}_{\mathrm{z}<t}\right)=\frac{\exp \left(e(x)^{\top} h_{\theta}\left(\mathrm{x}_{\mathrm{z}<t}\right)\right)}{\sum_{x^{\prime}} \exp \left(e\left(x^{\prime}\right)^{\top} h_{\theta}\left(\mathrm{x}_{\mathrm{z}<t}\right)\right)}
+$$
+但是该方法有问题，因为没有考虑$z_t$，所以作者提出了如下计算方式：
+$$
+p_{\theta}\left(X_{z_{t}}=x \mid \mathrm{x}_{z_{<t}}\right)=\frac{\exp \left(e(x)^{\top} g_{\theta}\left(\mathrm{x}_{\mathrm{z}_{<t}}, z_{t}\right)\right)}{\sum_{x^{\prime}} \exp \left(e\left(x^{\prime}\right)^{\top} g_{\theta}\left(\mathrm{x}_{\mathrm{z}_{<t}}, z_{t}\right)\right)}
+$$
+作者将$h_\theta, g_\theta$分别称为content representation和query representation，计算方式为：
+$$
+\begin{aligned}
+g_{z_{t}}^{(m)}& \leftarrow \operatorname{Attention}
+\left(\mathrm{Q}=g_{z_{t}}^{(m-1)}, \mathrm{KV}=\mathrm{h}_{\mathrm{z}_{<t}}^{(m-\theta)} 
+\right)
+\quad\left(\text { query stream: use } z_{t} \text { but cannot see } x_{z_{t}}\right). \\
+h_{z_{t}}^{(m)} &\leftarrow \operatorname{Attention}\left(\mathrm{Q}=h_{z_{t}}^{(m-1)}, \mathrm{KV}=\mathrm{h}_{\mathrm{z}_{\leq t}}^{(m-1)} ; \theta\right), \quad\left(\text { content stream: use both } z_{t} \text { and } x_{z_{t}}\right) .
+\end{aligned}
+$$
+作者还借鉴了Transformer-XL的想法，将$h$的计算方式修改为：
+$$
+h_{z_{t}}^{(m)} \leftarrow \operatorname{Attention}\left(\mathrm{Q}=h_{z_{t}}^{(m-1)}, \mathrm{KV}=\left[\tilde{\mathrm{h}}^{(m-1)}, \mathrm{h}_{\mathrm{z}_{\leq t}}^{(m-1)}\right] ; \theta\right)
+$$
+
+目标函数：
+
+注意穷举全部排列显然是不现实的，所以作者将目标函数定义为：
+$$
+\max _{\theta} \mathbb{E}_{\mathbf{z} \sim \mathcal{Z}_{T}}\left[\log p_{\theta}\left(\mathbf{x}_{\mathbf{z}_{>c}} \mid \mathbf{x}_{\mathbf{z}_{\leq c}}\right)\right]=\mathbb{E}_{\mathbf{z} \sim \mathcal{Z}_{T}}\left[\sum_{t=c+1}^{|\mathbf{z}|} \log p_{\theta}\left(x_{z_{t}} \mid \mathbf{x}_{\mathbf{z}_{<t}}\right)\right]
+$$
+
+
+
+## 时间复杂度
+
+因为是预训练任务，所以不考虑这点。
+
+
+
+## 训练以及loss
+
+已经讨论过。
+
+
+
+## 代码
+
+- [https://github.com/zihangdai/xlnet](https://github.com/zihangdai/xlnet)
+
+
+
+## 实验以及适用场景
+
+从实验来看，带来了非常大的提升。
+
+
+
+## 细节
+
+暂无，需要复现之后才能了解细节。
+
+
+
+## 简评
+
+非常有意思的想法，虽然时间有点久远，但是个人觉得很值得复现。

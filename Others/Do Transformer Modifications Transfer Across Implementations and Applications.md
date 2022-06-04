@@ -1,0 +1,18 @@
+# Do Transformer Modifications Transfer Across Implementations and Applications?
+
+论文地址：
+
+- https://arxiv.org/abs/2102.11972
+
+
+
+## 简评
+
+讨论例如激活函数，Normalization，层数和Embedding的配比以及其他一些实现细节对应Transformer性能的影响，给几个主要结论：
+
+1. RMS Norm性能最好；
+2. ReGLU激活函数性能最好；
+3. 同样参数下，不是层数越多越好，有一个折中点；
+
+总体来说，该论文给出了很多有价值的实验，上述三个点可以考虑复现。
+

@@ -1,0 +1,59 @@
+# Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context
+
+论文地址：
+
+- [https://arxiv.org/abs/1901.02860](https://arxiv.org/abs/1901.02860)
+
+
+
+## 整体思路以及计算方式
+
+传统的Attention计算，$Q,K$可以拆成context和pos部分，所以Attention Score的计算可以拆成4项：
+$$
+\begin{aligned}
+\mathbf{A}_{i, j}^{\mathrm{abs}} &=\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k} \mathbf{E}_{x_{j}}}_{(a)}+\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k} \mathbf{U}_{j}}_{(b)} \\
+&+\underbrace{\mathbf{U}_{i}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k} \mathbf{E}_{x_{j}}}_{(c)}+\underbrace{\mathbf{U}_{i}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k} \mathbf{U}_{j}}_{(d)}
+\end{aligned}
+$$
+Transformer-XL的思路是将(b), (c), (d)项修改：
+$$
+\begin{aligned}
+\mathbf{A}_{i, j}^{\mathrm{rel}} &=\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k, E} \mathbf{E}_{x_{j}}}_{(a)}+\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k, R} \mathbf{R}_{i-j}}_{(b)} \\
+&+\underbrace{u^{\top} \mathbf{W}_{k, E} \mathbf{E}_{x_{j}}}_{(c)}+\underbrace{v^{\top} \mathbf{W}_{k, R} \mathbf{R}_{i-j}}_{(d)} \cdot
+\end{aligned}
+$$
+
+
+## 时间复杂度
+
+Attention Matrix的时间复杂度由$n^2d$增加为$4n^2d$，其余部分不变。
+
+
+
+## 训练以及loss
+
+不变。
+
+
+
+## 代码
+
+- [https://github.com/kimiyoung/transformer-xl](https://github.com/kimiyoung/transformer-xl)
+
+
+
+## 实验以及适用场景
+
+作者主要测试了LM，不清楚在Encoder中是否有效果。
+
+
+
+## 细节
+
+暂无。
+
+
+
+## 简评
+
+应该是第一篇引入相对位置编码的工作，将Attention Score拆成4项的思路还是挺巧妙的。

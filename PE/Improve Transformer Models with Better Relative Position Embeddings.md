@@ -1,0 +1,72 @@
+# Improve Transformer Models with Better Relative Position Embeddings
+
+论文地址：
+
+- [https://arxiv.org/abs/2009.13658](https://arxiv.org/abs/2009.13658)
+
+
+
+## 整体思路以及计算方式
+
+给出引入相对位置编码的几种方案。
+
+方案1：
+$$
+\begin{aligned}
+e_{i j}&=\frac{\left(x_{i} W^{Q}\right)\left(x_{j} W^{K}\right)^{T} a_{i j}}{\sqrt{d_{z}}}\\
+a_{i j}&=w_{|j-i|}
+\end{aligned}
+$$
+方案2：
+$$
+\begin{aligned}
+e_{i j}&=\frac{\left(x_{i} W^{Q}\right)\left(x_{j} W^{K}\right)^{T} a_{i j}}{\sqrt{d_{z}}}\\
+a_{i j}&=w_{j-i}
+\end{aligned}
+$$
+方案3：
+$$
+\begin{aligned}
+e_{i j}&=\frac{\text{sum_prod}\left(x_{i} W^{Q}, x_{j} W^{K}, a_{i j}\right)}{\sqrt{d_{z}}} \\
+a_{i j}&=\mathbf{w}_{j-i} \in \mathbb{R}^{d_{z}}
+\end{aligned}
+$$
+方案4：
+$$
+e_{i j}=\frac{\left(x_{i} W^{Q}+a_{i j}\right)\left(x_{j} W^{K}+a_{i j}\right)^{T}-\left\langle a_{i j}, a_{i j}\right\rangle}{\sqrt{d_{z}}}
+$$
+
+
+## 时间复杂度
+
+会增加一定的时间复杂度，但关于序列长度任然是二次。
+
+
+
+## 训练以及loss
+
+不变。
+
+
+
+## 代码
+
+没有，但实现起来很简单。
+
+
+
+## 实验以及适用场景
+
+总体来说效果一般。
+
+
+
+## 细节
+
+暂无。
+
+
+
+## 简评
+
+对性能提升不多，所以暂时不考虑复现。

@@ -1,0 +1,39 @@
+# Transformer Feed-Forward Layers Are Key-Value Memories
+
+论文地址：
+
+- [https://arxiv.org/abs/2012.14913](https://arxiv.org/abs/2012.14913)
+
+参考资料：
+
+- [https://jerryzhao.com/post/guan-yu-vanilla-transformer-de-chong-chong-xi-jie/](https://jerryzhao.com/post/guan-yu-vanilla-transformer-de-chong-chong-xi-jie/)
+- [https://zhuanlan.zhihu.com/p/459305335](https://zhuanlan.zhihu.com/p/459305335)
+
+
+
+## 整体思路
+
+主要是一篇分析原理的论文，解读FFN的作用，这里不做深入解读，只记录下主要观点。
+
+Key-Value Memory Network的形式如下：
+$$
+\operatorname{MN}(x)=\operatorname{SoftMax}\left(x K^{T}\right) V
+$$
+Transformer中的FFN形式如下：
+$$
+\operatorname{FFN}(x)=f\left(x K^{T}\right) V
+$$
+可以看到两者非常相似，所以作者猜想FFN是否也有记忆的功能，并通过实验验证了这点。
+
+
+
+## 代码
+
+- [https://github.com/mega002/ff-layers/](https://github.com/mega002/ff-layers/)
+- https://zhuanlan.zhihu.com/p/459305335
+
+
+
+## 简评
+
+没有细读，但是加深了对FFN的理解，后续做FFN改进的时候可以做适当参考。
