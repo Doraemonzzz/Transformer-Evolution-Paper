@@ -1,0 +1,72 @@
+# Transcormer: Transformer for Sentence Scoring with Sliding Language Modeling
+
+论文地址：
+
+- [https://arxiv.org/abs/2205.12986](https://arxiv.org/abs/2205.12986)
+
+
+
+## 整体思路以及计算方式
+
+本文的主要出发点是解决Sentence Scoring计算效率和性能问题。
+
+记：
+$$
+\mathbf{y}=\left\{y_{1}, \cdots, y_{|y|}\right\}
+$$
+ALM计算方式：
+$$
+\sum_{i=1}^{|y|} \log P\left(y_{i}| y_{<i}\right)
+$$
+MLM计算方式：
+$$
+\sum_{i=1}^{|\mathbf{y}|} \log P\left(y_{i}|\mathbf{y} \backslash y_{i}\right)
+$$
+可以看到，MLM的计算复杂度远大于ALM，但ALM只能利用单向信息，本文就是解决这点，思路也很简单，即利用如下分解：
+$$
+\mathbf{y} \backslash y_{i} = y_{<i} \cup y_{>i}
+$$
+计算公式：
+$$
+\begin{aligned}
+\overrightarrow{h_{i}^{l}}&=\operatorname{Attention}\left({Q}=\overrightarrow{h_{i}^{l-1}}, {K V}=\overrightarrow{h_{<i}^{l-1}} ; \theta\right) \\
+\overleftarrow{h^{l}_{i}}&=\operatorname{Attention}\left({Q}=\overleftarrow{h_{i}^{l-1}}, {K V}=\overleftarrow{h_{>i}^{l-1}} ; \theta\right) \\
+q_{i}^{l}&=\operatorname{Attention}\left({Q}=q_{i}^{l-1}, {K V}=\left[\overrightarrow{h_{i}^{l}}, \overleftarrow{h^{l}_{i}}\right] ; \theta\right)
+
+\end{aligned}
+$$
+
+
+## 时间复杂度
+
+Attention部分为之前的3倍。
+
+
+
+## 训练以及loss
+
+不变。
+
+
+
+## 代码
+
+不变，未来应该会更新。
+
+
+
+## 实验以及适用场景
+
+适用于所有场景，作者主要测试了Sentence Scoring场景，其实不太清楚该任务的主要应用。
+
+
+
+## 细节
+
+暂无。
+
+
+
+## 简评
+
+思路挺简洁的，不过我不太了解Sentence Scoring，所以对该论文做个简单了解即可。
