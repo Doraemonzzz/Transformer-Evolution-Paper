@@ -10,10 +10,15 @@
 
 提出了一种代替Attention的模块，最一般的计算形式为：
 $$
-f(Q, K, V)=\sigma_{q}\left(Q^{\prime}_t\right) \odot \frac{\sum_{s\le t} w_{s,t}\left(\sigma_{k}\left(K^{\prime}_{s}\right) \odot V^{\prime}_{s}\right)}
-{\sum_{s\le t} w_{s,t} \sigma_{k}\left(K^{\prime}_{s}\right)}
+\begin{aligned}
+f(Q, K, V)_{td}&=\sigma_{q}\left(Q_{td}\right) \odot \frac{\sum_{s\le t} w_{s,t}\left(\sigma_{k}\left(K_{sd}\right) \odot V_{sd}\right)}
+{\sum_{s\le t} w_{s,t} \sigma_{k}\left(K_{sd}\right)} \\
+f(Q, K, V)_{t}&=\sigma_{q}\left(Q_t\right) \odot \frac{\sum_{s\le t} w_{s,t}\left(\sigma_{k}\left(K_{s}\right) \odot V_{s}\right)}
+{\sum_{s\le t} w_{s,t} \sigma_{k}\left(K_{s}\right)} 
+
+\end{aligned}
 $$
-和Linear Attention非常接近，不过使用了点乘。
+该方法和Linear Attention非常接近，不过使用了点乘（求和符号是关于每个特征维度）
 
 
 
