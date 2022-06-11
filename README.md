@@ -26,9 +26,10 @@ $$
 - FFN：讨论Transformer中FFN的作用，或者其改进；
 - Head：讨论Attention中多头的作用；
 - Memory：在Transformer中增加memory模块；
-- MHA_Kernel：利用Kernel method改进Attention模块（$QKV\to Q(KV)$）；
-- MHA_Sparse_And_LowRank：利用稀疏或者低秩的假设降低Attention计算复杂度；
-  - 这个描述不太准确，后续会修改；
+- MHA：改进Attention模块：
+  - RightProduct：利用矩阵右乘改进Attention模块（$QKV\to Q(KV)$）；
+  - SparseOrLowRank：利用稀疏或者低秩的假设降低Attention计算复杂度；
+  - Other：其他方法；
 - Normalize_And_Residual：讨论Transformer中各种Norm的Residual的区别；
   - 该仓库包括范围有点广，后续可能会精细分类；
 - Pe(Positional Embedding)：讨论各种位置编码，主要以相对位置编码为主；
