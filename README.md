@@ -7,6 +7,8 @@
 ## 为什么建该仓库
 
 Transformer模块可以用如下两个式子表示：
+
+
 $$
 \begin{aligned}
 \mathbf X_1 &=\mathrm{Norm}(\mathbf X + \mathrm{MHA}(\mathbf X,\mathbf Y))\\
