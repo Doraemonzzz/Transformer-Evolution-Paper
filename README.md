@@ -8,13 +8,13 @@
 
 Transformer模块可以用如下两个式子表示：
 
-
 $$
 \begin{aligned}
 \mathbf X_1 &=\mathrm{Norm}(\mathbf X + \mathrm{MHA}(\mathbf X,\mathbf Y))\\
 \mathbf O &= \mathrm{Norm}(\mathbf X_1 + \mathrm{FFN}(\mathbf X_1))
 \end{aligned}
 $$
+
 通过上式，很容易将Transformer模块解耦，本仓库的目的就是记录对每个解耦后的模块改进的论文，最终给出一个更好的Transformer，即Transformer-Evolution。
 
 
