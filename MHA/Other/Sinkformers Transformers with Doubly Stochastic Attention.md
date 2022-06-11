@@ -27,10 +27,8 @@
   
   $$
   \mathbf K^{\infty}:=\operatorname{Sinkhorn}(\mathbf C)
-$$
-  
-  并且满足：
-  
+  $$
+并且满足：
   $$
   \begin{aligned}
   \mathbf K^{\infty} \mathbf 1_n &= \mathbf 1_n \\
