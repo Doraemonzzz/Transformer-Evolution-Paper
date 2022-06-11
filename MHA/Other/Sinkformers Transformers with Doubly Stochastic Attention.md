@@ -16,7 +16,7 @@
 
   -  行归一化：$\left(N_{R}(\mathrm K)\right)_{ij}=\frac{\mathrm K_{ij}}{\sum_{l=1}^{n} \mathrm K_{il} }$
   -  列归一化：$\left(N_{C}(\mathrm K)\right)_{ij}=\frac{\mathrm K_{ij}}{\sum_{l=1}^{n} \mathrm K_{lj} }$
-  -  行归一化：$\left(N_{R}(\mathrm K)\right)_{ij}=K$
+  -  行归一化：$\left(N_{R}(\mathrm K)\right)_{ij}=K_i$
 
 - 执行如下操作：
   
