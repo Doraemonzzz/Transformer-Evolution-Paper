@@ -14,9 +14,8 @@
 
 - 定义：
 
-  -  行归一化：$\left(N_{R}(\mathrm K)\right)_{i, j}:=\frac{\mathrm K_{i, j}}{\sum_{l=1}^{n} \mathrm K_{i, l}}$
+  -  行归一化：${\left(N_{R}(\mathrm K)\right)}_{i, j}:=\frac{\mathrm K_{i, j}}{\sum_{l=1}^{n} \mathrm K_{i, l}}$
   -  列归一化：$\left(N_{C}(\mathrm K)\right)_{i, j}:=\frac{\mathrm K_{i, j}}{\sum_{l=1}^{n} \mathrm K_{l, j}}$
-  -  $1$
 
 - 执行如下操作：
   
