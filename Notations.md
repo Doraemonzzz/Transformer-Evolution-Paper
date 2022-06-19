@@ -39,7 +39,8 @@
      - 经过一段时间的思考，最终还是将多头注意力机制定义为上述形式，具体来说$\mathbf X$对应query，$\mathbf Y$对应key, value；
    - $\mathrm {FFN}(\mathbf{X}): \mathbb R^{n\times  d} \to \mathbb R^{n\times d}$：
      - Transformer中FFN层；
-
-   目前先定义这些，后续再进行补充。
-
+- $\mathrm{Sum}(\mathbf X,d=0): \mathbb R^{n\times d} \to \mathbb R^{d}$
+   
+目前先定义这些，后续再进行补充。
+   
    

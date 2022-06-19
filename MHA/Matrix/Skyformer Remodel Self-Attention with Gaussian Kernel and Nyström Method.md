@@ -1,0 +1,90 @@
+# Skyformer: Remodel Self-Attention with Gaussian Kernel and Nyström Method
+
+论文地址：
+
+- [https://arxiv.org/abs/2111.00035](https://arxiv.org/abs/2111.00035)
+
+
+
+## 整体思路以及计算方式
+
+首先引入高斯核，将相似度矩阵表示为对称矩阵的子矩阵，然后利用Nyström方法计算对称矩阵，最后求出子矩阵。
+
+符号说明：
+
+- $Q\in \mathbb R^{n\times d}, K\in \mathbb R^{n\times d},V \in \mathbb R^{n\times d}$
+- $S\in \mathbb R^{2n\times d_s}$
+
+整体思路如下：
+
+相似度的计算方式修改：
+$$
+\mathbf S_{ij} =\exp \left(-\frac{\left\|\mathbf{q}_{i}-\mathbf{k}_{j}\right\|^{2}}{2 \sqrt{p}}\right)
+$$
+记：
+$$
+\phi(p,q) = \exp\left(-\frac{\|p-q \|^2}{2\sqrt p}\right)
+$$
+那么：
+$$
+S = \phi(Q, K) \in \mathbb R^{n\times m}
+$$
+注意$S$不好处理，但是$S$为如下矩阵的子矩阵：
+$$
+\bar B =\phi \left(\left(\begin{array}{l}
+\mathbf {Q} \\
+\mathbf {K}
+\end{array}\right),\left(\begin{array}{l}
+\mathbf {Q} \\
+\mathbf {K}
+\end{array}\right)\right)
+$$
+注意$\bar B$为正定矩阵，所以可以用Nyström Method进行近似计算：
+$$
+\tilde{\overline{\mathbf{B}}}=\overline{\mathbf{B}} \mathbf{S}\left(\mathbf{S}^{T} \overline{\mathbf{B}} \mathbf{S}\right)^{\dagger} \mathbf{S}^{T} \overline{\mathbf{B}}
+$$
+最后利用下式近似计算$\mathbf S$：
+$$
+\tilde{\mathbf{B}}:=(\mathbf{I}_n, \mathbf{0}) \tilde{\overline{\mathbf{B}}}(\mathbf{0}, \mathbf{I}_n)^{T}
+$$
+
+
+## 时间复杂度
+
+首先分析矩阵的形状：
+
+- $(\mathbf{I}_n, \mathbf{0}) \overline{\mathbf{B}} \mathbf{S} \in \mathbb R^{n\times d_s}$
+- $\left(\mathbf{S}^{T} \overline{\mathbf{B}} \mathbf{S}\right)^{\dagger}\in \mathbb R^{d_s\times d_s}$
+- $\mathbf{S}^{T} \overline{\mathbf{B}} (\mathbf{0}, \mathbf{I}_n)^{T} \in \mathbb R^{d_s\times n}$
+
+总时间复杂度为$O(nd_s d)$。
+
+
+
+## 训练以及loss
+
+不变。
+
+
+
+## 代码
+
+- [https://github.com/pkuzengqi/Skyformer](https://github.com/pkuzengqi/Skyformer)
+
+
+
+## 实验以及适用场景
+
+实验结果比较少，主要是测试了近似误差和LRA，总体来说结果一般；测试的都是Encoder情形，Decoder情形可能较难实现。
+
+
+
+## 细节
+
+暂无。
+
+
+
+## 简评
+
+暂无。
