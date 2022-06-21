@@ -1,0 +1,57 @@
+# HyperMixer: An MLP-based Green AI Alternative to Transformers
+
+论文地址：
+
+- [https://arxiv.org/abs/2203.03691](https://arxiv.org/abs/2203.03691)
+
+
+
+## 整体思路以及计算方式
+
+Transformer模块分为两部分：
+
+- MHA作为Token Mixer；
+- FFN作为Feature Mixer；
+
+Token Mixer部分是可替换的，MLP Mixer就是一个例子，但是只能处理定长，HyperMixer就是解决这点，整体如下：
+
+- 输入：$X\in \mathbb R^{n\times d}$
+- $M =XW_1\in \mathbb R^{n\times d_1}$
+- $Y= f(M^T X)\in \mathbb R^{d_1\times d}$
+- $O=M Y\in \mathbb R^{n\times d}$
+
+
+
+## 时间复杂度
+
+$O(n d^2)$。
+
+
+
+## 训练以及loss
+
+不变。
+
+
+
+## 代码
+
+- [https://github.com/ChristophReich1996/HyperMixer](https://github.com/ChristophReich1996/HyperMixer)
+
+
+
+## 实验以及适用场景
+
+Encoder情形非常容易实现，Decoder情形需要研究一下。
+
+
+
+## 细节
+
+这种形式的TokenMixer和Linear Attention非常相似。
+
+
+
+## 简评
+
+思路非常好，可以说揭露了问题的本质，可以考虑复现。
