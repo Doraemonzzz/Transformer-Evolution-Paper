@@ -67,3 +67,4 @@ $\mathrm{MHA}_1$的时间复杂度为$O(mnd)$，$\mathrm{MHA}_2$的时间复杂�
 
 - 值得复现，可以尝试应用于Roberta模型中；
 - LM, NMT场景是否能使用需要思考；
+
