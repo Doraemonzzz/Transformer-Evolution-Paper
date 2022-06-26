@@ -1,1 +1,1 @@
-- [A survey on recently proposed activation functions for Deep Learning](./A survey on recently proposed activation functions for Deep Learning.md)
+这部分主要关注激活函数相关的内容。
