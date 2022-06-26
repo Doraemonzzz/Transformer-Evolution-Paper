@@ -39,6 +39,14 @@ $$
 
 
 
+## 在线阅读
+
+由于github的公式支持还不够好，所以提供gitbook的网页阅读方式：
+
+- https://doraemonzzz.gitbook.io/transformer_evolution_paper/[](https://doraemonzzz.gitbook.io/transformer_evolution_paper/)
+
+
+
 ## TODO
 
 相对位置编码综述：
