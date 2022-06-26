@@ -2,7 +2,7 @@
 
 - [Act](./Act/README.md)
 
-  - [A survey on recently proposed activation functions for Deep Learning](./Act/A survey on recently proposed activation functions for Deep Learning.md)
+  - [A survey on recently proposed activation functions for Deep Learning](Act/A survey on recently proposed activation functions for Deep Learning.md)
 
   
 
