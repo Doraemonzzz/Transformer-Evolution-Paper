@@ -1,0 +1,1 @@
+- [A survey on recently proposed activation functions for Deep Learning](./A survey on recently proposed activation functions for Deep Learning.md)
