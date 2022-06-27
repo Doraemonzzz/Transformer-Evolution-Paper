@@ -27,7 +27,7 @@ $$
 - Head：讨论Attention中多头的作用；
 - Memory：在Transformer中增加memory模块；
 - MHA：改进Attention模块：
-  - RightProduct：利用矩阵右乘改进Attention模块（$QKV\to Q(KV)$）；
+  - RightProduct：利用矩阵右乘改进Attention模块（$$QKV\to Q(KV)$$）；
   - SparseOrLowRank：利用稀疏或者低秩的假设降低Attention计算复杂度；
   - Other：其他方法；
 - Normalize_And_Residual：讨论Transformer中各种Norm的Residual的区别；
