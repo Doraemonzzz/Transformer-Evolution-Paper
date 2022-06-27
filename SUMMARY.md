@@ -15,13 +15,13 @@
 - [FFN](./FFN/README.md)
 
   - [Large Memory Layers with Product Keys](./FFN/1.md)
-- [Transformer Feed-Forward Layers Are Key-Value Memories](./FFN/2.md)
+  - [Transformer Feed-Forward Layers Are Key-Value Memories](./FFN/2.md)
   - [GLU Variants Improve Transformer](./FFN/3.md)
-- [Simple Recurrence Improves Masked Language Models](./FFN/4.md)
+  - [Simple Recurrence Improves Masked Language Models](./FFN/4.md)
   - [Pay Attention to MLPs](./FFN/5.md)
-- [S2-MLP Spatial-Shift MLP Architecture for Vision](./FFN/6.md)
+  - [S2-MLP Spatial-Shift MLP Architecture for Vision](./FFN/6.md)
   - [S2-MLPv2 Improved Spatial-Shift MLP Architecture for Vision](./FFN/7.md)
-- [HyperMixer An MLP-based Green AI Alternative to Transformers](./FFN/8.md)
+  - [HyperMixer An MLP-based Green AI Alternative to Transformers](./FFN/8.md)
   
 - 
 

@@ -21,17 +21,19 @@
    \end{aligned}
    $$
 
-3. 标量用常规字体表示$$\alpha, \beta$$；
+3. $\mathbf x_i$表示矩阵$\mathbf X$的第$i$行的转置；
 
-4. 默认用$$n$$表示序列长度，$$d$$表示嵌入维度，$$b$$表示batch size；
+4. 标量用常规字体表示$$\alpha, \beta$$；
 
-5. Score Matrix：$$\mathbf S=\mathbf Q \mathbf K^{\top}$$；
+5. 默认用$$n$$表示序列长度，$$d$$表示嵌入维度，$$b$$表示batch size；
 
-6. Attention Matrix：$$\mathbf A = f(\mathbf S)$$；
+6. Score Matrix：$$\mathbf S=\mathbf Q \mathbf K^{\top}$$；
+
+7. Attention Matrix：$$\mathbf A = f(\mathbf S)$$；
 
    - 一般场景下$$f=\mathrm{Softmax}$$，但是也可以有别的选择；
 
-7. 一些常用算子符号：
+8. 一些常用算子符号：
 
    - $$\mathrm{Softmax}(\mathbf X,d=-1): \mathbb R^{n\times d}\to \mathbb R^{n\times d}$$：
      - $$d$$为归一化维度，不指定时为最后一维，这里表示映射时没有考虑$d$，做个不严格的简化定义；
@@ -41,8 +43,8 @@
      - 经过一段时间的思考，最终还是将多头注意力机制定义为上述形式，具体来说$$\mathbf X$$对应query，$$\mathbf Y$$对应key, value；
    - $$\mathrm {FFN}(\mathbf{X}): \mathbb R^{n\times  d} \to \mathbb R^{n\times d}$$：
      - Transformer中FFN层；
-   
-8. $$\mathrm{Sum}(\mathbf X,d=0): \mathbb R^{n\times d} \to \mathbb R^{d}$$
+
+9. $$\mathrm{Sum}(\mathbf X,d=0): \mathbb R^{n\times d} \to \mathbb R^{d}$$
 
 目前先定义这些，后续再进行补充。
 
