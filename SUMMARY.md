@@ -23,6 +23,10 @@
   - [S2-MLPv2 Improved Spatial-Shift MLP Architecture for Vision](./FFN/007.md)
   - [HyperMixer An MLP-based Green AI Alternative to Transformers](./FFN/008.md)
   
+- [Head](./Head/README.md)
+
+  - [Multi-Head Attention Collaborate Instead of Concatenate](./Head/001.md)
+
 - 
 
   
