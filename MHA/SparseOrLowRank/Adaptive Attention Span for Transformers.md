@@ -12,9 +12,9 @@
 
 计算方式：
 
-- 给定$q, k, v\in \mathbb R^{n\times d}$
+- 给定$$q, k, v\in \mathbb R^{n\times d}$$
 
-- 计算相似度$s_{tr}= q_t^Tk_r \in \mathbb R$
+- 计算相似度$$s_{tr}= q_t^{\top} k_r \in \mathbb R$$
 
 - 计算mask：
   $$
@@ -32,13 +32,13 @@
 
 ## 时间复杂度
 
-依然是标准Attention的计算方式，所以时间复杂度为$O(n^2 d)$。
+依然是标准Attention的计算方式，所以时间复杂度为$$O(n^2 d)$$。
 
 
 
 ## 训练以及loss
 
-loss增加了$z$的正则项部分：
+loss增加了$$z$$的正则项部分：
 $$
 L=-\log P\left(w_{1}, \ldots, w_{T}\right)+\frac{\lambda}{M} \sum_{i} z_{i}
 $$

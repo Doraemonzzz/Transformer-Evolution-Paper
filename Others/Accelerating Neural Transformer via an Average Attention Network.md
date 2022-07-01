@@ -16,17 +16,17 @@
 
 替换Deocder中self Attention为AAN，计算方式如下：
 
-- $y_j\in \mathbb R^{1\times d_1}$
-- ${g}_{j}=\operatorname{FFN}\left(\frac{1}{j} \sum_{k=1}^{j} {y}_{k}\right)\in \mathbb R^{1\times d_2}$
-- ${i}_{j}, {f}_{j}=\sigma\left(W\left[{y}_{j} ; {g}_{j}\right]\right)\in \mathbb R$
-- $\tilde{{h}}_{j}={i}_{j} \odot {y}_{j}+{f}_{j} \odot {g}_{j} \in \mathbb R^{1\times d_1}$
-- ${h}_{j}=\operatorname{LayerNorm}\left({y}_{j}+\tilde{{h}}_{j}\right)\in \mathbb R^{1\times d_1}$
+- $$y_j\in \mathbb R^{1\times d_1}$$
+- $${g}_{j}=\operatorname{FFN}\left(\frac{1}{j} \sum_{k=1}^{j} {y}_{k}\right)\in \mathbb R^{1\times d_2}$$
+- $${i}_{j}, {f}_{j}=\sigma\left(W\left[{y}_{j} ; {g}_{j}\right]\right)\in \mathbb R$$
+- $$\tilde{{h}}_{j}={i}_{j} \odot {y}_{j}+{f}_{j} \odot {g}_{j} \in \mathbb R^{1\times d_1}$$
+- $${h}_{j}=\operatorname{LayerNorm}\left({y}_{j}+\tilde{{h}}_{j}\right)\in \mathbb R^{1\times d_1}$$
 
 
 
 ## 时间复杂度
 
-循环实现的时间复杂度为$O(nd_1 d_2)$，并行实现的时间复杂度为$O(n^2d_1 + nd_1 d_2)$。
+循环实现的时间复杂度为$$O(nd_1 d_2)$$，并行实现的时间复杂度为$$O(n^2d_1 + nd_1 d_2)$$。
 
 
 

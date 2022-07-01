@@ -10,24 +10,24 @@
 
 利用非参数回归的方式对Attention进行改进，整体思路分为两步：
 
-假设$k,v$的关系，对Attention的计算进行变形：
+假设$$k,v$$的关系，对Attention的计算进行变形：
 
-- 非参数回归，${v}_{j}=f\left({k}_{j}\right)+\varepsilon_{j}$
+- 非参数回归，$${v}_{j}=f\left({k}_{j}\right)+\varepsilon_{j}$$
 
-- ${\mathbb E}[{v} \mid {k}]=\int_{{R}^{D}} {v} \cdot p({v} \mid {k}) d {v}=\int \frac{{v} \cdot p({v}, {k})}{p({k})} d {v}$
+- $${\mathbb E}[{v} \mid {k}]=\int_{{R}^{D}} {v} \cdot p({v} \mid {k}) d {v}=\int \frac{{v} \cdot p({v}, {k})}{p({k})} d {v}$$
 
-- 利用Kernel法估计概率密度（$\varphi$为高斯核函数）：
+- 利用Kernel法估计概率密度（$$\varphi$$为高斯核函数）：
   $$
   \hat{p}_{\sigma}({v}, {k})=\frac{1}{N} \sum_{j=1}^{N} \varphi_{\sigma}\left({v}-{v}_{j}\right) \varphi_{\sigma}\left({k}-{k}_{j}\right), \quad \hat{p}_{\sigma}({k})=\frac{1}{N} \sum_{j=1}^{N} \varphi_{\sigma}\left({k}-{k}_{j}\right)
   $$
 
-- 带入：$\widehat{f}_{\sigma}({k})={\mathbb E}[{v} \mid {k}]= \frac{\sum_{j=1}^{N} v_{j} \varphi_{\sigma}\left({k}-{k}_{j}\right)}{\sum_{j=1}^{N} \varphi_{\sigma}\left({k}-{k}_{j}\right)}$
+- 带入：$$\widehat{f}_{\sigma}({k})={\mathbb E}[{v} \mid {k}]= \frac{\sum_{j=1}^{N} v_{j} \varphi_{\sigma}\left({k}-{k}_{j}\right)}{\sum_{j=1}^{N} \varphi_{\sigma}\left({k}-{k}_{j}\right)}$$
 
-- 将$k$换成$q$得到：
+- 将$$k$$换成$$q$$得到：
   $$
   \begin{aligned} \widehat{f}_{\sigma}\left({q}_{i}\right) &=\frac{\sum_{j}^{N} {v}_{j} \exp \left(-\left\|{q}_{i}-{k}_{j}\right\|^{2} / 2 \sigma^{2}\right)}{\sum_{j}^{N} \exp \left(-\left\|{q}_{i}-{k}_{j}\right\|^{2} / 2 \sigma^{2}\right)} \\ &=\frac{\sum_{j}^{N} {v}_{j} \exp \left[-\left(\left\|{q}_{i}\right\|^{2}+\left\|{k}_{j}\right\|^{2}\right) / 2 \sigma^{2}\right] \exp \left({q}_{i} {k}_{j}^{\top} / \sigma^{2}\right)}{\sum_{j}^{N} \exp \left[-\left(\left\|{q}_{i}\right\|^{2}+\left\|{k}_{j^{\prime}}\right\|^{2}\right) / 2 \sigma^{2}\right] \exp \left({q}_{i} {k}_{j}^{\top} / \sigma^{2}\right)} \end{aligned}
   $$
-  如果假设$\|q_i\| = \|k_j\|$，那么上式退化为Attention，由此作者说该方法是Attention的推广；
+  如果假设$$\|q_i\| = \|k_j\|$$，那么上式退化为Attention，由此作者说该方法是Attention的推广；
 
 进行计算：
 
@@ -38,13 +38,13 @@
   \hat{{h}}_{i}:=f_{N, R}\left({q}_{i}\right)=\frac{\sum_{i=1}^{N} {v}_{i} \prod_{j=1}^{D} \phi\left(\frac{\sin \left(R\left(q_{i j}-k_{i j}\right)\right)}{R\left(q_{i j}-k_{i j}\right)}\right)}{\sum_{i=1}^{N} \prod_{j=1}^{D} \phi\left(\frac{\sin \left(R\left(q_{i j}-k_{i j}\right)\right)}{R\left(q_{i j}-k_{i j}\right)}\right)}
   $$
 
-- 这里$\phi$是一个函数，论文里有介绍。
+- 这里$$\phi$$是一个函数，论文里有介绍。
 
 
 
 ## 时间复杂度
 
-依然为$O(n^2d)$，所以理论复杂度没有改进，根据计算的形式，推测速度会慢。
+依然为$$O(n^2d)$$，所以理论复杂度没有改进，根据计算的形式，推测速度会慢。
 
 
 

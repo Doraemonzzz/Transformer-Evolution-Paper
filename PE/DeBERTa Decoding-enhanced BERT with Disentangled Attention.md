@@ -8,7 +8,7 @@
 
 ## 整体思路以及计算方式
 
-传统的Attention计算，$Q,K$可以拆成context和pos部分：
+传统的Attention计算，$$Q,K$$可以拆成context和pos部分：
 $$
 \begin{aligned}
 Q_{c}&=H W_{q, c}\\
@@ -44,7 +44,7 @@ $$
 
 ## 时间复杂度
 
-Attention Matrix的时间复杂度由$n^2d$增加为$3n^2d$，其余部分不变。
+Attention Matrix的时间复杂度由$$n^2d$$增加为$$3n^2d$$，其余部分不变。
 
 
 

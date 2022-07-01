@@ -8,15 +8,15 @@
 
 ## 整体思路以及计算方式
 
-之前优化Attention的方式都是近似$\mathrm{sim}(q, k)$，在这篇工作中，作者指出，应该考虑整体，即近似：
+之前优化Attention的方式都是近似$$\mathrm{sim}(q, k)$$，在这篇工作中，作者指出，应该考虑整体，即近似：
 $$
 \frac{\sum_{i=1}^{n} \kappa\left(q, k_{i}\right) v_{i}}{\sum_{i=1}^{n}  \kappa\left(q, k_{i}\right)}
 $$
-定义$o$为vanilla attention的输出：
+定义$$o$$为vanilla attention的输出：
 $$
 o=\frac{\sum_{i=1}^{n} \kappa\left(q, k_{i}\right) v_{i}}{\sum_{i=1}^{n}  \kappa\left(q, k_{i}\right)}
 $$
-作者将考虑$v$的近似方式称为optimal-v-aware-r（OVA）。
+作者将考虑$$v$$的近似方式称为optimal-v-aware-r（OVA）。
 
 对于OVA，作者考虑如下集合：
 $$
@@ -26,11 +26,11 @@ $$
 $$
 \operatorname{argmin}_{\tilde{o} \in C_{r}}\|o-\tilde{o}\|^{2}
 $$
-对于$r \ge d+1$情形，根据[Carathéodory定理](https://en.wikipedia.org/wiki/Carath%C3%A9odory's_theorem_(convex_hull))，必然存在$\tilde o$，使得：
+对于$$r \ge d+1$$情形，根据[Carathéodory定理](https://en.wikipedia.org/wiki/Carath%C3%A9odory's_theorem_(convex_hull))，必然存在$$\tilde o$$，使得：
 $$
 \tilde o = o
 $$
-对于$r=1$，那么：
+对于$$r=1$$，那么：
 $$
 \tilde o = o_k,  k=\arg\min_{i} \|o-v_i \|^{2}
 $$
@@ -46,7 +46,7 @@ $$
 S =\{a_1,a_2,\ldots, a_r| \kappa\left(q, k_{a_1}\right) \ge \kappa\left(q, k_{a_2}\right)
 \ge \ldots \ge \kappa\left(q, k_{a_n}\right)\}
 $$
-作者的结论是对于相同的$r$，OVA-r比OVO-r的效果好。
+作者的结论是对于相同的$$r$$，OVA-r比OVO-r的效果好。
 
 
 

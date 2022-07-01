@@ -13,9 +13,9 @@
    \begin{aligned}
    \mathbf X&= \left[
     \begin{matrix}
-   \mathbf x_1^T  \\
+   \mathbf x_1^{\top}   \\
    \vdots \\
-   \mathbf x_n^T
+   \mathbf x_n^{\top} 
      \end{matrix}
      \right]\in \mathbb R^{n\times d};
    \end{aligned}

@@ -10,18 +10,18 @@
 
 整体思路是从Kernel的角度理解Attention，然后调整内积的计算方式：
 
-- 输入$X\in \mathbb R^{n\times d}$，位置矩阵$P\in \mathbb R^{n\times d}$
-- $Q=XW_Q\in \mathbb R^{n\times d}, K = XW_K\in \mathbb R^{n\times d}$
-- $Q_P=PW_{1}\in \mathbb R^{n\times d}, K_P = P W_2\in \mathbb R^{n\times d}$
-- 内积计算$QK^\top + Q_P Q_K^{\top} \in \mathbb R^{n\times n}$
+- 输入$$X\in \mathbb R^{n\times d}$$，位置矩阵$$P\in \mathbb R^{n\times d}$$
+- $$Q=XW_Q\in \mathbb R^{n\times d}, K = XW_K\in \mathbb R^{n\times d}$$
+- $$Q_P=PW_{1}\in \mathbb R^{n\times d}, K_P = P W_2\in \mathbb R^{n\times d}$$
+- 内积计算$$QK^\top + Q_P Q_K^{\top} \in \mathbb R^{n\times n}$$
 - 剩余部分相同
 
 作者还测试了一些Kernel的性能：
 
-- $f(x, y)= x^{\top} y$（非常差）
-- $f(x, y)= (x^{\top} y)^2$（很差）
-- $f(x, y)= \exp (x^{\top} y)$（默认设置，效果不错）
-- $f(x, y)= \exp (-\|x -y \|^2)$（效果不错，和前者接近）
+- $$f(x, y)= x^{\top} y$$（非常差）
+- $$f(x, y)= (x^{\top} y)^2$$（很差）
+- $$f(x, y)= \exp (x^{\top} y)$$（默认设置，效果不错）
+- $$f(x, y)= \exp (-\|x -y \|^2)$$（效果不错，和前者接近）
 
 
 

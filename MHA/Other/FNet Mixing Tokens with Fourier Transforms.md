@@ -10,14 +10,14 @@
 
 思路非常简单，利用FFT进行token mix和feature mix，整体计算公式如下：
 
-- 输入：$X\in \mathbb R^{n\times d}$
-- $O=\mathrm{FFT}(\mathrm {FFT}(X, d=-1),d=-2).real\in \mathbb R^{n\times d}$
+- 输入：$$X\in \mathbb R^{n\times d}$$
+- $$O=\mathrm{FFT}(\mathrm {FFT}(X, d=-1),d=-2).real\in \mathbb R^{n\times d}$$
 
 
 
 ## 时间复杂度
 
-$O(n^2 d + n d\log d + dn\log n )$。
+$$O(n^2 d + n d\log d + dn\log n )$$。
 
 
 

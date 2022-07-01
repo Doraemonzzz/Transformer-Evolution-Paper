@@ -27,7 +27,7 @@ $$
 E_{S}(S(i), S(j))&=\mathrm{S}_{\hat{i}, \hat{j}}
 \end{aligned}
 $$
-其中$S$为映射函数，$\mathrm S$为可学习的矩阵。
+其中$$S$$为映射函数，$$\mathrm S$$为可学习的矩阵。
 
 
 

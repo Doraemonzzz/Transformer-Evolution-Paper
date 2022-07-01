@@ -10,11 +10,11 @@
 
 针对时间序列问题的特点，提出了Exponential Smoothing Attention和Frequency Attention，这里主要讨论Exponential Smoothing Attention。
 
-- 输入：$V\in \mathbb R^{n\times d}$
+- 输入：$$V\in \mathbb R^{n\times d}$$
 
-- 输出：${A}_{\mathrm{ES}} \cdot\left[\begin{array}{c}
-  \boldsymbol{v}_{0}^{T} \\ {V}
-  \end{array}\right]\in \mathbb R^{n\times d}$，其中
+- 输出：$${A}_{\mathrm{ES}} \cdot\left[\begin{array}{c}
+  \mathbf {v}_{0}^{\top} \\ {V}
+  \end{array}\right]\in \mathbb R^{n\times d}$$，其中
   $$
   {A}_{\mathrm{ES}}=\left[\begin{array}{cccccc}
   (1-\alpha)^{1} & \alpha & 0 & 0 & \ldots & 0 \\
@@ -25,13 +25,13 @@
   \end{array}\right]
   $$
 
-利用论文提出的算法，可以再$O(nd\log n)$中完成。
+利用论文提出的算法，可以再$$O(nd\log n)$$中完成。
 
 
 
 ## 时间复杂度
 
-$O(nd\log n)$。
+$$O(nd\log n)$$。
 
 
 
@@ -61,4 +61,4 @@ $O(nd\log n)$。
 
 ## 简评
 
-本质上还是一种相对位置编码的思路，可以在$O(nd\log n)$时间内完成，可以进行尝试。
+本质上还是一种相对位置编码的思路，可以在$$O(nd\log n)$$时间内完成，可以进行尝试。

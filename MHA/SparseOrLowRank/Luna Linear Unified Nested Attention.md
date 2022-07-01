@@ -12,9 +12,9 @@
 
 双向版本：
 
-- 外部输入$P\in \mathbb R^{l\times d}$，输入$X\in \mathbb R^{n\times d}$
-- $Y_P= \mathrm{MHA}(P, X)\in \mathbb R^{l\times d}$
-- $Y_X=\mathrm{MHA}(X,Y_P)\in \mathbb R^{n\times d}$
+- 外部输入$$P\in \mathbb R^{l\times d}$$，输入$$X\in \mathbb R^{n\times d}$$
+- $$Y_P= \mathrm{MHA}(P, X)\in \mathbb R^{l\times d}$$
+- $$Y_X=\mathrm{MHA}(X,Y_P)\in \mathbb R^{n\times d}$$
 
 单向版本：
 
@@ -25,26 +25,26 @@
   Y&\in \mathbb R^{n\times d_1} \\
   Z&\in \mathbb R^{n\times d_2}\\
   F &\triangleq f(X, Y, Z) \in \mathbb R^{n\times d_2}\\
-  f_{t}&=\frac{1}{t} x_{t} \sum_{j=1}^{t} y_{j}^{T} z_{j}\in \mathbb R^{d_2}
+  f_{t}&=\frac{1}{t} x_{t} \sum_{j=1}^{\top} y_{j}^{\top} z_{j}\in \mathbb R^{d_2}
   
   \end{aligned}
   $$
 
-- $A_{pack}=w(P X^T)\in \mathbb R^{l\times n}$
+- $$A_{pack}=w(P X^{\top} )\in \mathbb R^{l\times n}$$
 
-  - $w$可选1 + elu / softplus（不能按行使用Softmax，因为会有信息泄露）
+  - $$w$$可选1 + elu / softplus（不能按行使用Softmax，因为会有信息泄露）
 
-- $A_{uppack}=w(f(X, X,A_{pack}^{\top}))\in \mathbb R^{n\times l}$
+- $$A_{uppack}=w(f(X, X,A_{pack}^{\top}))\in \mathbb R^{n\times l}$$
 
-  - $w$可选Softmax（按行归一化）
+  - $$w$$可选Softmax（按行归一化）
 
-- 输出$Y=f(A_{uppack},A_{pack}^{\top}, X)\in \mathbb R^{n\times d}$
+- 输出$$Y=f(A_{uppack},A_{pack}^{\top}, X)\in \mathbb R^{n\times d}$$
 
 
 
 ## 时间复杂度
 
-单向双向的时间复杂度都为$O(nd^2)$，但是单向版本本质上是RNN，速度会比较慢。
+单向双向的时间复杂度都为$$O(nd^2)$$，但是单向版本本质上是RNN，速度会比较慢。
 
 
 

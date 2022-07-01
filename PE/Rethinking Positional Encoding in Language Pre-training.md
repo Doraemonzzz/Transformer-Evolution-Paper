@@ -13,8 +13,8 @@
 改进1，修改相似度计算函数：
 $$
 \begin{aligned}
-\alpha_{i j}&=\frac{1}{\sqrt{2 d}}\left(x_{i}^{l} W^{Q, l}\right)\left(x_{j}^{l} W^{K, l}\right)^{T}+\frac{1}{\sqrt{2 d}}\left(p_{i} U^{Q}\right)\left(p_{j} U^{K}\right)^{T}\\
-\alpha_{i j}&=\frac{1}{\sqrt{2 d}}\left(x_{i}^{l} W^{Q, l}\right)\left(x_{j}^{l} W^{K, l}\right)^{T}+\frac{1}{\sqrt{2 d}}\left(p_{i} U^{Q}\right)\left(p_{j} U^{K}\right)^{T}+b_{j-i}
+\alpha_{i j}&=\frac{1}{\sqrt{2 d}}\left(x_{i}^{l} W^{Q, l}\right)\left(x_{j}^{l} W^{K, l}\right)^{\top}+\frac{1}{\sqrt{2 d}}\left(p_{i} U^{Q}\right)\left(p_{j} U^{K}\right)^{\top}\\
+\alpha_{i j}&=\frac{1}{\sqrt{2 d}}\left(x_{i}^{l} W^{Q, l}\right)\left(x_{j}^{l} W^{K, l}\right)^{\top}+\frac{1}{\sqrt{2 d}}\left(p_{i} U^{Q}\right)\left(p_{j} U^{K}\right)^{\top}+b_{j-i}
 
 \end{aligned}
 $$
@@ -25,8 +25,8 @@ $$
 整体计算公式为：
 $$
 \begin{aligned}
-&\alpha_{i j}^{\mathrm{TUPE}-\mathrm{A}}=\quad \frac{1}{\sqrt{2 d}}\left(x_{i}^{l} W^{Q, l}\right)\left(x_{j}^{l} W^{K, l}\right)^{T}+\operatorname{reset}_{\theta}\left(\frac{1}{\sqrt{2 d}}\left(p_{i} U^{Q}\right)\left(p_{j} U^{K}\right)^{T}, i, j\right)\\
-&\alpha_{i j}^{\mathrm{TUPE}-\mathrm{R}}=\frac{1}{\sqrt{2 d}}\left(x_{i}^{l} W^{Q, l}\right)\left(x_{j}^{l} W^{K, l}\right)^{T}+\operatorname{reset}_{\theta}\left(\frac{1}{\sqrt{2 d}}\left(p_{i} U^{Q}\right)\left(p_{j} U^{K}\right)^{T}+b_{j-i}, i, j\right)
+&\alpha_{i j}^{\mathrm{TUPE}-\mathrm{A}}=\quad \frac{1}{\sqrt{2 d}}\left(x_{i}^{l} W^{Q, l}\right)\left(x_{j}^{l} W^{K, l}\right)^{\top}+\operatorname{reset}_{\theta}\left(\frac{1}{\sqrt{2 d}}\left(p_{i} U^{Q}\right)\left(p_{j} U^{K}\right)^{\top}, i, j\right)\\
+&\alpha_{i j}^{\mathrm{TUPE}-\mathrm{R}}=\frac{1}{\sqrt{2 d}}\left(x_{i}^{l} W^{Q, l}\right)\left(x_{j}^{l} W^{K, l}\right)^{\top}+\operatorname{reset}_{\theta}\left(\frac{1}{\sqrt{2 d}}\left(p_{i} U^{Q}\right)\left(p_{j} U^{K}\right)^{\top}+b_{j-i}, i, j\right)
 \end{aligned}
 $$
 

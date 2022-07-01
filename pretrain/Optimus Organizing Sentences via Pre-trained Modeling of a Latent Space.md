@@ -14,24 +14,24 @@
 
 利用VAE的思想训练LM，本质上是Encoder-Decoder结构，整体思路如下。
 
-首先将LM的目标改为条件LM，$z$表示隐变量：
+首先将LM的目标改为条件LM，$$z$$表示隐变量：
 $$
-p_{\boldsymbol{\theta}}(\boldsymbol{x} \mid \boldsymbol{z})=\prod_{t=1}^{T} p_{\boldsymbol{\theta}}\left(x_{t} \mid x_{<t}, \boldsymbol{z}\right)
+p_{\mathbf {\theta}}(\mathbf {x} \mid \mathbf {z})=\prod_{t=1}^{\top} p_{\mathbf {\theta}}\left(x_{t} \mid x_{<t}, \mathbf {z}\right)
 $$
 损失函数为：
 $$
 \begin{aligned}
 \mathcal{L}_{\beta}&=\mathcal{L}_{E}+\beta \mathcal{L}_{R} \\
 
-\mathcal{L}_{E} &=-\mathbb{E}_{q_{\boldsymbol{\phi}}(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log p_{\boldsymbol{\theta}}(\boldsymbol{x} \mid \boldsymbol{z})\right] \\
-\mathcal{L}_{R} &=\operatorname{KL}\left(q_{\phi}(\boldsymbol{z} \mid \boldsymbol{x}) \| p(\boldsymbol{z})\right)
+\mathcal{L}_{E} &=-\mathbb{E}_{q_{\mathbf {\phi}}(\mathbf {z} \mid \mathbf {x})}\left[\log p_{\mathbf {\theta}}(\mathbf {x} \mid \mathbf {z})\right] \\
+\mathcal{L}_{R} &=\operatorname{KL}\left(q_{\phi}(\mathbf {z} \mid \mathbf {x}) \| p(\mathbf {z})\right)
 
 \end{aligned}
 $$
-论文中$z$是通过Encoder（BERT）计算，然后输入给Decoder（GPT），最后得到结果，使用$z$的方式有两种：
+论文中$$z$$是通过Encoder（BERT）计算，然后输入给Decoder（GPT），最后得到结果，使用$$z$$的方式有两种：
 
-- Memory：相当于给每一层增加一个token，$\boldsymbol{h}_{\mathrm{Mem}}=\mathbf{W}_{\mathrm{M}} \boldsymbol{z}$
-- Embedding：直接和embedding相加，$\boldsymbol{h}_{\mathrm{Emb}}^{\prime}=\boldsymbol{h}_{\mathrm{Emb}}+\mathbf{W}_{\mathrm{D} \boldsymbol{z}}$
+- Memory：相当于给每一层增加一个token，$$\mathbf {h}_{\mathrm{Mem}}=\mathbf{W}_{\mathrm{M}} \mathbf {z}$$
+- Embedding：直接和embedding相加，$$\mathbf {h}_{\mathrm{Emb}}^{\prime}=\mathbf {h}_{\mathrm{Emb}}+\mathbf{W}_{\mathrm{D} \mathbf {z}}$$
 
 
 

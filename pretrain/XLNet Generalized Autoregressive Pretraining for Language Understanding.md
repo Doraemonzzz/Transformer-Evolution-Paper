@@ -16,15 +16,15 @@
 
 XLNET给出一种新的预训练方式，结合了AR(GPT)，AE(Bert)的特点。
 
-给定句子$\mathrm{x}=\left[x_{1}, \cdots, x_{T}\right]$，AR语言模型的目标为：
+给定句子$$\mathrm{x}=\left[x_{1}, \cdots, x_{T}\right]$$，AR语言模型的目标为：
 $$
-\max _{\theta} \log p_{\theta}(\mathrm{x})=\sum_{t=1}^{T} \log p_{\theta}\left(x_{t} \mid \mathrm{x}_{<t}\right)=\sum_{t=1}^{T} \log \frac{\exp \left(h_{\theta}\left(\mathrm{x}_{1: t-1}\right)^{\top} e\left(x_{t}\right)\right)}{\sum_{x^{\prime}} \exp \left(h_{\theta}\left(\mathrm{x}_{1: t-1}\right)^{\top} e\left(x^{\prime}\right)\right)}
+\max _{\theta} \log p_{\theta}(\mathrm{x})=\sum_{t=1}^{\top} \log p_{\theta}\left(x_{t} \mid \mathrm{x}_{<t}\right)=\sum_{t=1}^{\top} \log \frac{\exp \left(h_{\theta}\left(\mathrm{x}_{1: t-1}\right)^{\top} e\left(x_{t}\right)\right)}{\sum_{x^{\prime}} \exp \left(h_{\theta}\left(\mathrm{x}_{1: t-1}\right)^{\top} e\left(x^{\prime}\right)\right)}
 $$
 AE语言模型的目标为：
 $$
-\max _{\theta} \log p_{\theta}(\overline{\mathrm{x}} \mid \hat{\mathrm{x}}) \approx \sum_{t=1}^{T} m_{t} \log p_{\theta}\left(x_{t} \mid \hat{\mathrm{x}}\right)=\sum_{t=1}^{T} m_{t} \log \frac{\exp \left(H_{\theta}(\hat{\mathrm{x}})_{t}^{\top} e\left(x_{t}\right)\right)}{\sum_{x^{\prime}} \exp \left(H_{\theta}(\hat{\mathrm{x}})_{t}^{\top} e\left(x^{\prime}\right)\right)}
+\max _{\theta} \log p_{\theta}(\overline{\mathrm{x}} \mid \hat{\mathrm{x}}) \approx \sum_{t=1}^{\top} m_{t} \log p_{\theta}\left(x_{t} \mid \hat{\mathrm{x}}\right)=\sum_{t=1}^{\top} m_{t} \log \frac{\exp \left(H_{\theta}(\hat{\mathrm{x}})_{t}^{\top} e\left(x_{t}\right)\right)}{\sum_{x^{\prime}} \exp \left(H_{\theta}(\hat{\mathrm{x}})_{t}^{\top} e\left(x^{\prime}\right)\right)}
 $$
-其中$m_t=1$表示$x_t$被mask。
+其中$$m_t=1$$表示$$x_t$$被mask。
 
 两者的缺点是：
 
@@ -32,21 +32,21 @@ $$
 - AE模型在训练的时候有噪声，在测试的时候没有噪声；
 - AR模型只能看到单侧信息；
 
-为了解决这点，论文提出了Permutation Language Modeling，即对长度为$T$的句子，考虑全部$T!$种排列：
+为了解决这点，论文提出了Permutation Language Modeling，即对长度为$$T$$的句子，考虑全部$$T!$$种排列：
 $$
-\max _{\theta} \quad \mathbb{E}_{\mathrm{z} \sim \mathcal{Z}_{T}}\left[\sum_{t=1}^{T} \log p_{\theta}\left(x_{z_{t}} \mid \mathrm{x}_{\mathrm{z}<t}\right)\right]
+\max _{\theta} \quad \mathbb{E}_{\mathrm{z} \sim \mathcal{Z}_{T}}\left[\sum_{t=1}^{\top} \log p_{\theta}\left(x_{z_{t}} \mid \mathrm{x}_{\mathrm{z}<t}\right)\right]
 $$
-其中$\mathcal Z_T$表示长度为$T$的全排列集合。
+其中$$\mathcal Z_T$$表示长度为$$T$$的全排列集合。
 
-下一步是计算$p_{\theta}\left(x_{z_{t}} \mid \mathrm{x}_{\mathrm{z}<t}\right)$，模型的计算方式为：
+下一步是计算$$p_{\theta}\left(x_{z_{t}} \mid \mathrm{x}_{\mathrm{z}<t}\right)$$，模型的计算方式为：
 $$
 p_{\theta}\left(X_{z_{t}}=x \mid \mathrm{x}_{\mathrm{z}<t}\right)=\frac{\exp \left(e(x)^{\top} h_{\theta}\left(\mathrm{x}_{\mathrm{z}<t}\right)\right)}{\sum_{x^{\prime}} \exp \left(e\left(x^{\prime}\right)^{\top} h_{\theta}\left(\mathrm{x}_{\mathrm{z}<t}\right)\right)}
 $$
-但是该方法有问题，因为没有考虑$z_t$，所以作者提出了如下计算方式：
+但是该方法有问题，因为没有考虑$$z_t$$，所以作者提出了如下计算方式：
 $$
 p_{\theta}\left(X_{z_{t}}=x \mid \mathrm{x}_{z_{<t}}\right)=\frac{\exp \left(e(x)^{\top} g_{\theta}\left(\mathrm{x}_{\mathrm{z}_{<t}}, z_{t}\right)\right)}{\sum_{x^{\prime}} \exp \left(e\left(x^{\prime}\right)^{\top} g_{\theta}\left(\mathrm{x}_{\mathrm{z}_{<t}}, z_{t}\right)\right)}
 $$
-作者将$h_\theta, g_\theta$分别称为content representation和query representation，计算方式为：
+作者将$$h_\theta, g_\theta$$分别称为content representation和query representation，计算方式为：
 $$
 \begin{aligned}
 g_{z_{t}}^{(m)}& \leftarrow \operatorname{Attention}
@@ -56,7 +56,7 @@ g_{z_{t}}^{(m)}& \leftarrow \operatorname{Attention}
 h_{z_{t}}^{(m)} &\leftarrow \operatorname{Attention}\left(\mathrm{Q}=h_{z_{t}}^{(m-1)}, \mathrm{KV}=\mathrm{h}_{\mathrm{z}_{\leq t}}^{(m-1)} ; \theta\right), \quad\left(\text { content stream: use both } z_{t} \text { and } x_{z_{t}}\right) .
 \end{aligned}
 $$
-作者还借鉴了Transformer-XL的想法，将$h$的计算方式修改为：
+作者还借鉴了Transformer-XL的想法，将$$h$$的计算方式修改为：
 $$
 h_{z_{t}}^{(m)} \leftarrow \operatorname{Attention}\left(\mathrm{Q}=h_{z_{t}}^{(m-1)}, \mathrm{KV}=\left[\tilde{\mathrm{h}}^{(m-1)}, \mathrm{h}_{\mathrm{z}_{\leq t}}^{(m-1)}\right] ; \theta\right)
 $$

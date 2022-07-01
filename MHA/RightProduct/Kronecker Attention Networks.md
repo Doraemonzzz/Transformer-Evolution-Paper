@@ -12,15 +12,15 @@
 
 计算方式：
 
-- 给定$q, k, v\in \mathbb R^{n\times d}$
-- 计算$q_{mean}, k_{mean}\in \mathbb R^{n\times 1}$
-- 计算$\mathrm{MHA}(q_{mean}, k_{mean},v) \in \mathbb R^{n\times d}$
+- 给定$$q, k, v\in \mathbb R^{n\times d}$$
+- 计算$$q_{mean}, k_{mean}\in \mathbb R^{n\times 1}$$
+- 计算$$\mathrm{MHA}(q_{mean}, k_{mean},v) \in \mathbb R^{n\times d}$$
 
 
 
 ## 时间复杂度
 
-尽管使用了降维，但是计算复杂度仍然为$O(n^2d)$。
+尽管使用了降维，但是计算复杂度仍然为$$O(n^2d)$$。
 
 
 
@@ -38,7 +38,7 @@
 
 ## 实验以及适用场景
 
-原始方法只适用于Encoder，但是将mean修改为前$i$项的均值可以适用于Decoder；论文里测试了CV的结果，效果比较一般。
+原始方法只适用于Encoder，但是将mean修改为前$$i$$项的均值可以适用于Decoder；论文里测试了CV的结果，效果比较一般。
 
 
 

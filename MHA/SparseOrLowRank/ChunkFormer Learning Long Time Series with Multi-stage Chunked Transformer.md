@@ -8,7 +8,7 @@
 
 ## 整体思路以及计算方式
 
-思路非常简单，对序列进行分组(chunk)，每$k$个序列进行计算Attention，是一种Local Attention，如下图所示：
+思路非常简单，对序列进行分组(chunk)，每$$k$$个序列进行计算Attention，是一种Local Attention，如下图所示：
 
 ![](../.Photo/Sparse_And_LowRank/4.jpg)
 
@@ -16,7 +16,7 @@
 
 ## 时间复杂度
 
-假设每组有$k$个token，那么总时间复杂度为$O(k^2 n/k d)=O(nkd)$。
+假设每组有$$k$$个token，那么总时间复杂度为$$O(k^2 n/k d)=O(nkd)$$。
 
 
 

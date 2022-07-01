@@ -8,7 +8,7 @@
 
 ## 整体思路以及计算方式
 
-传统的Attention计算，$Q,K$可以拆成context和pos部分，所以Attention Score的计算可以拆成4项：
+传统的Attention计算，$$Q,K$$可以拆成context和pos部分，所以Attention Score的计算可以拆成4项：
 $$
 \begin{aligned}
 \mathbf{A}_{i, j}^{\mathrm{abs}} &=\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k} \mathbf{E}_{x_{j}}}_{(a)}+\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k} \mathbf{U}_{j}}_{(b)} \\
@@ -26,7 +26,7 @@ $$
 
 ## 时间复杂度
 
-Attention Matrix的时间复杂度由$n^2d$增加为$4n^2d$，其余部分不变。
+Attention Matrix的时间复杂度由$$n^2d$$增加为$$4n^2d$$，其余部分不变。
 
 
 

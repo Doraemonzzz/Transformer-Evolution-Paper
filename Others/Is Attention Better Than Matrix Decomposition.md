@@ -16,11 +16,11 @@
 
 思路是利用矩阵分解代替Attention。
 
-假设$X\in \mathbb R^{d\times n}$可以分解为如下形式：
+假设$$X\in \mathbb R^{d\times n}$$可以分解为如下形式：
 $$
 {X}=\overline{{X}}+{E}={D} C+{E}
 $$
-这些变量满足如下条件（$E$表示噪声）：
+这些变量满足如下条件（$$E$$表示噪声）：
 $$
 \begin{aligned}
 \overline{{X}}& \in \mathbb{R}^{d \times n} \\
@@ -30,20 +30,20 @@ C&\in \mathbb R^{r\times n}\\
 
 \end{aligned}
 $$
-使用流程为通过某种方式计算$D,C$，最后输出$DC$。
+使用流程为通过某种方式计算$$D,C$$，最后输出$$DC$$。
 
-作者给出了两种方式计算$D,C$：
+作者给出了两种方式计算$$D,C$$：
 
 - Soft VQ
-  - for $k=1,\ldots, K$:
-    - ${C} \leftarrow \operatorname{SoftMax}\left(\frac{1}{T} \operatorname{cosine}({D},{X})\right)$
-    - ${D} \leftarrow {X} \boldsymbol{C}^{\top} \operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}$
-  - return $\bar X =DC$
+  - for $$k=1,\ldots, K$$:
+    - $${C} \leftarrow \operatorname{SoftMax}\left(\frac{1}{T} \operatorname{cosine}({D},{X})\right)$$
+    - $${D} \leftarrow {X} \mathbf {C}^{\top} \operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}$$
+  - return $$\bar X =DC$$
 - NMF with MU
-  - for $k=1,\ldots, K$:
-    - ${C}_{i j} \leftarrow {C}_{i j} \frac{\left({D}^{\top} X\right)_{i j}}{\left({D}^{\top} {D C}\right)_{i j}}$
-    - ${D}_{i j} \leftarrow {D}_{i j} \frac{\left({X} C^{\top}\right)_{i j}}{\left({D C} {C}^{\top}\right)_{i j}}$
-  - return $\bar X =DC$
+  - for $$k=1,\ldots, K$$:
+    - $${C}_{i j} \leftarrow {C}_{i j} \frac{\left({D}^{\top} X\right)_{i j}}{\left({D}^{\top} {D C}\right)_{i j}}$$
+    - $${D}_{i j} \leftarrow {D}_{i j} \frac{\left({X} C^{\top}\right)_{i j}}{\left({D C} {C}^{\top}\right)_{i j}}$$
+  - return $$\bar X =DC$$
 
 
 
@@ -51,37 +51,37 @@ $$
 
 Soft VQ时间复杂度：
 
-- ${C} \leftarrow \operatorname{SoftMax}\left(\frac{1}{T} \operatorname{cosine}({D},{X})\right)$，所以时间复杂度为$O(nrd)$
-  - $\operatorname{cosine}({D},{X})$需要计算$D^T X$，即$r\times d,d\times n\to  r\times n$，所以时间复杂度为$O(nrd)$
-  - $ \operatorname{SoftMax}$：$r\times n \to r\times n$，所以时间复杂度为所以时间复杂度为$O(nr)$
-  - 总时间复杂度为$O(nrd)$
-- ${D} \leftarrow {X} {C}^{\top} \operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}:$
-  - $\operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}:r\times n,n\times 1 \to r\times 1 \to r\times r $，时间复杂度为$O(nr)$
-  - ${X} {C}^{\top}:d\times n, n\times r \to d\times r$，时间复杂度为$O(nrd) $ 
-  - ${C}^{\top} \operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}: d\times r, r\times r \to r\times r$，时间复杂度为$O(dr^2)$
-- 所以时间复杂度为$O(nrd+ dr^2)$
-- 循环$K$次，时间复杂度为$O(K(nrd+ dr^2))$
-- $\bar X =DC: d\times r , r\times n \to d\times n$，时间复杂度为$O(nrd)$
-- 总时间复杂度为$O((K+1)nrd + Kdr^2)$
+- $${C} \leftarrow \operatorname{SoftMax}\left(\frac{1}{T} \operatorname{cosine}({D},{X})\right)$$，所以时间复杂度为$$O(nrd)$$
+  - $$\operatorname{cosine}({D},{X})$$需要计算$$D^{\top}  X$$，即$$r\times d,d\times n\to  r\times n$$，所以时间复杂度为$$O(nrd)$$
+  - $$ \operatorname{SoftMax}$$：$$r\times n \to r\times n$$，所以时间复杂度为所以时间复杂度为$$O(nr)$$
+  - 总时间复杂度为$$O(nrd)$$
+- $${D} \leftarrow {X} {C}^{\top} \operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}:$$
+  - $$\operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}:r\times n,n\times 1 \to r\times 1 \to r\times r $$，时间复杂度为$$O(nr)$$
+  - $${X} {C}^{\top}:d\times n, n\times r \to d\times r$$，时间复杂度为$$O(nrd) $$ 
+  - $${C}^{\top} \operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}: d\times r, r\times r \to r\times r$$，时间复杂度为$$O(dr^2)$$
+- 所以时间复杂度为$$O(nrd+ dr^2)$$
+- 循环$$K$$次，时间复杂度为$$O(K(nrd+ dr^2))$$
+- $$\bar X =DC: d\times r , r\times n \to d\times n$$，时间复杂度为$$O(nrd)$$
+- 总时间复杂度为$$O((K+1)nrd + Kdr^2)$$
 
 NMF with MU时间复杂度：
 
-- ${C}_{i j} \leftarrow {C}_{i j} \frac{\left({D}^{\top} X\right)_{i j}}{\left({D}^{\top} {D C}\right)_{i j}}$
-  - ${D}^{\top} X: r\times d, d\times n\to r\times n$，时间复杂度为$O(nrd)$
-  - ${D}^{\top} {D C} $
-    - 先计算$DC$，再计算${D}^{\top} {D C} $
-      - $DC:d\times r, r\times n \to d\times n$，时间复杂度为$O(nrd)$
-      - ${D}^{\top} {D C}: r\times d, d\times n \to r\times n$，时间复杂度为$O(nrd)$
-    - 先计算${D}^{\top} D$，再计算${D}^{\top} {D C} $
-      - ${D}^{\top} D: r\times d, d\times r \to r\times r $，时间复杂度为$O(dr^2)$
-      - 再计算${D}^{\top} {D C}:r\times r, r\times n\to r\times n $，时间复杂度为$O(nrd)$
-    - 一般$r<n$，所以选择第二种算法，时间复杂度为$O(nrd+dr^2)$
-  - 两次element wise乘法/除法：$r\times n \to r\times n \to r\times n$，时间复杂度为$O(nr)$
-  - 循环$K$次，时间复杂度为$O(K(nrd+dr^2))$
-  - $\bar X =DC: d\times r , r\times n \to d\times n$，时间复杂度为$O(nrd)$
-  - 总时间复杂度为$O((K+1)nrd + Kdr^2)$
+- $${C}_{i j} \leftarrow {C}_{i j} \frac{\left({D}^{\top} X\right)_{i j}}{\left({D}^{\top} {D C}\right)_{i j}}$$
+  - $${D}^{\top} X: r\times d, d\times n\to r\times n$$，时间复杂度为$$O(nrd)$$
+  - $${D}^{\top} {D C} $$
+    - 先计算$$DC$$，再计算$${D}^{\top} {D C} $$
+      - $$DC:d\times r, r\times n \to d\times n$$，时间复杂度为$$O(nrd)$$
+      - $${D}^{\top} {D C}: r\times d, d\times n \to r\times n$$，时间复杂度为$$O(nrd)$$
+    - 先计算$${D}^{\top} D$$，再计算$${D}^{\top} {D C} $$
+      - $${D}^{\top} D: r\times d, d\times r \to r\times r $$，时间复杂度为$$O(dr^2)$$
+      - 再计算$${D}^{\top} {D C}:r\times r, r\times n\to r\times n $$，时间复杂度为$$O(nrd)$$
+    - 一般$$r<n$$，所以选择第二种算法，时间复杂度为$$O(nrd+dr^2)$$
+  - 两次element wise乘法/除法：$$r\times n \to r\times n \to r\times n$$，时间复杂度为$$O(nr)$$
+  - 循环$$K$$次，时间复杂度为$$O(K(nrd+dr^2))$$
+  - $$\bar X =DC: d\times r , r\times n \to d\times n$$，时间复杂度为$$O(nrd)$$
+  - 总时间复杂度为$$O((K+1)nrd + Kdr^2)$$
 
-注意$r, K$一般不会很大（远小于$n$），所以该方法的时间复杂度关于序列长度大概能到线性。
+注意$$r, K$$一般不会很大（远小于$$n$$），所以该方法的时间复杂度关于序列长度大概能到线性。
 
 
 

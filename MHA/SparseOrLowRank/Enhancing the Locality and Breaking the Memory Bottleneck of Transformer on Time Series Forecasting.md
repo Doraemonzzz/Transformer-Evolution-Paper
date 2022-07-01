@@ -14,14 +14,14 @@
 
 思路很简单，分为两点：
 
-- Token mix：每个token和周围几个token进行融合得到$Q,K,V$，这样做可以明显加速收敛；
+- Token mix：每个token和周围几个token进行融合得到$$Q,K,V$$，这样做可以明显加速收敛；
 - Local attention：每个token只和局部token做attention，每层关注的局部位置不同，最后达到全局attention的效果；
 
 
 
 ## 时间复杂度
 
-$O(n\log_2^2n)$
+$$O(n\log_2^2n)$$
 
 
 

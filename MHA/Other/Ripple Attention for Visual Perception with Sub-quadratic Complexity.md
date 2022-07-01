@@ -8,11 +8,11 @@
 
 ## 整体思路以及计算方式
 
-本文首先利用了Linear Attention，然后对Vit中的Attention提出局部性假设：每个$q$交互的$k$限制在某个范围内，利用动态规划算法计算该范围内的结果，然后计算加权和，整体计算式如下：
+本文首先利用了Linear Attention，然后对Vit中的Attention提出局部性假设：每个$$q$$交互的$$k$$限制在某个范围内，利用动态规划算法计算该范围内的结果，然后计算加权和，整体计算式如下：
 $$
 O_{ij}=\frac{\phi\left(\mathbf{q}_{i j}\right)^{\top} \sum_{r=0}^{R}\alpha_{r}(i, j) \sum_{(m, n) \in \mathcal{N}_{r}(i, j)} \phi\left(\mathbf{k}_{m n}\right) \mathbf{v}_{m n}^{\top}}{\phi\left(\mathbf{q}_{i j}\right)^{\top} \sum_{r=0}^{R}\alpha_{r}(i, j) \sum_{\left(m^{\prime}, n^{\prime}\right) \in \mathcal{N}_{r}(i, j)} \phi\left(\mathbf{k}_{m^{\prime} n^{\prime}}\right)}
 $$
-这里的下标$ij$表示第$i$行，第$j$个patch，$\mathcal{N}_{r}(i, j)$表示：
+这里的下标$$ij$$表示第$$i$$行，第$$j$$个patch，$$\mathcal{N}_{r}(i, j)$$表示：
 $$
 \mathcal{N}_{r}(i, j)=\{(m,n) | |m-i|+|n-j| \le r\}
 $$
@@ -22,7 +22,7 @@ $$
 
 ## 时间复杂度
 
-利用动态规划算法，时间复杂度可达$O(nR)$。
+利用动态规划算法，时间复杂度可达$$O(nR)$$。
 
 
 

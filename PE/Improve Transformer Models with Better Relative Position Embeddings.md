@@ -13,14 +13,14 @@
 方案1：
 $$
 \begin{aligned}
-e_{i j}&=\frac{\left(x_{i} W^{Q}\right)\left(x_{j} W^{K}\right)^{T} a_{i j}}{\sqrt{d_{z}}}\\
+e_{i j}&=\frac{\left(x_{i} W^{Q}\right)\left(x_{j} W^{K}\right)^{\top} a_{i j}}{\sqrt{d_{z}}}\\
 a_{i j}&=w_{|j-i|}
 \end{aligned}
 $$
 方案2：
 $$
 \begin{aligned}
-e_{i j}&=\frac{\left(x_{i} W^{Q}\right)\left(x_{j} W^{K}\right)^{T} a_{i j}}{\sqrt{d_{z}}}\\
+e_{i j}&=\frac{\left(x_{i} W^{Q}\right)\left(x_{j} W^{K}\right)^{\top} a_{i j}}{\sqrt{d_{z}}}\\
 a_{i j}&=w_{j-i}
 \end{aligned}
 $$
@@ -33,7 +33,7 @@ a_{i j}&=\mathbf{w}_{j-i} \in \mathbb{R}^{d_{z}}
 $$
 方案4：
 $$
-e_{i j}=\frac{\left(x_{i} W^{Q}+a_{i j}\right)\left(x_{j} W^{K}+a_{i j}\right)^{T}-\left\langle a_{i j}, a_{i j}\right\rangle}{\sqrt{d_{z}}}
+e_{i j}=\frac{\left(x_{i} W^{Q}+a_{i j}\right)\left(x_{j} W^{K}+a_{i j}\right)^{\top}-\left\langle a_{i j}, a_{i j}\right\rangle}{\sqrt{d_{z}}}
 $$
 
 

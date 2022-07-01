@@ -22,7 +22,7 @@ S=\exp (Q \ominus K)
 $$
 由于时间复杂度没有降低，其实并无意义，后续的操作是降低时间复杂度。
 
-作者首先假设$Q=K$，那么$S$变成对称矩阵，将其表示为：
+作者首先假设$$Q=K$$，那么$$S$$变成对称矩阵，将其表示为：
 $$
 S=\left[\begin{array}{cc}
 A & B \\
@@ -41,9 +41,9 @@ A & B
 \end{array}\right]\\
 A\in \mathbb R^{m\times m}, B\in \mathbb R^{m\times (n-m)}, C\in \mathbb R^{(n-m)\times (n-m)}, m \ll n
 $$
-其中$A^{\dagger}$是$A$的Moore-Penrose逆矩阵。
+其中$$A^{\dagger}$$是$$A$$的Moore-Penrose逆矩阵。
 
-后续的做法是，通过采样的方式得到$\tilde Q,\tilde K$（降维），然后计算
+后续的做法是，通过采样的方式得到$$\tilde Q,\tilde K$$（降维），然后计算
 $$
 A=\exp (\tilde{Q} \ominus \tilde{K}), \quad P=\exp (\tilde{Q} \ominus K)
 $$
@@ -57,7 +57,7 @@ $$
 
 ## 时间复杂度
 
-$O(mnd)$，如果$m$较小，可视为线性。
+$$O(mnd)$$，如果$$m$$较小，可视为线性。
 
 
 
@@ -87,4 +87,4 @@ $O(mnd)$，如果$m$较小，可视为线性。
 
 ## 简评
 
-该论文提供了一个视角，$Q$是否可以和$K$相同，在self attention中，似乎对性能不会有损失，这也是后续可以研究的点。
+该论文提供了一个视角，$$Q$$是否可以和$$K$$相同，在self attention中，似乎对性能不会有损失，这也是后续可以研究的点。

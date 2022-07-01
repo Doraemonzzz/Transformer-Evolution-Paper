@@ -10,16 +10,16 @@
 
 输入：
 
-- $X\in \mathbb R^{n\times d_1}$
-- $Q,K,V=XW_Q, XW_K, XW_V\in \mathbb R^{n\times d_2}$
-- $Q= \mathrm{Norm}(Q), K=\mathrm{Norm}(K)$
-- $O=V\mathrm{Softmax}(K^T Q) W_o\in \mathbb R^{n\times  d_1}$（分组计算）
+- $$X\in \mathbb R^{n\times d_1}$$
+- $$Q,K,V=XW_Q, XW_K, XW_V\in \mathbb R^{n\times d_2}$$
+- $$Q= \mathrm{Norm}(Q), K=\mathrm{Norm}(K)$$
+- $$O=V\mathrm{Softmax}(K^{\top}  Q) W_o\in \mathbb R^{n\times  d_1}$$（分组计算）
 
 
 
 ## 时间复杂度
 
-假设有$h$个分组，那么时间复杂度为$O(n(d/h)^2\times h)=O(nd^2/h)$。
+假设有$$h$$个分组，那么时间复杂度为$$O(n(d/h)^2\times h)=O(nd^2/h)$$。
 
 
 

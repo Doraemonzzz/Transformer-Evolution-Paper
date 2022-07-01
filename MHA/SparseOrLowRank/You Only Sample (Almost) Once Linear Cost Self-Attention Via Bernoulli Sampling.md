@@ -15,13 +15,13 @@ $$
 其中：
 $$
 \mathcal{B}(Q, K)_{i, j}=\mathbb{1}_{f\left(Q_{i}\right)=f\left(K_{j}\right)} \\
-\mathbb{E}\left[\mathcal{B}(Q, K)_{i, j}\right]=\left(1-\frac{\arccos \left(Q_{i} K_{j}^{T}\right)}{\pi}\right)^{\tau}
+\mathbb{E}\left[\mathcal{B}(Q, K)_{i, j}\right]=\left(1-\frac{\arccos \left(Q_{i} K_{j}^{\top}\right)}{\pi}\right)^{\tau}
 $$
 
 
 ## 时间复杂度
 
-$n m \tau \log _{2}(d)+n m d$，其中$m$是采样数量。
+$$n m \tau \log _{2}(d)+n m d$$，其中$$m$$是采样数量。
 
 
 

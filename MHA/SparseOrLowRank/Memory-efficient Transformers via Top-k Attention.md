@@ -10,14 +10,14 @@
 
 利用两点来减少计算：
 
-- 利用top-k取每行attention score的前$k$个最大值；
+- 利用top-k取每行attention score的前$$k$$个最大值；
 - 通过chunk的方式减少内存的锋值；
 
 
 
 ## 时间复杂度
 
-时间复杂度为$O(nkd)$，内存峰值为$O(knd)$。
+时间复杂度为$$O(nkd)$$，内存峰值为$$O(knd)$$。
 
 
 

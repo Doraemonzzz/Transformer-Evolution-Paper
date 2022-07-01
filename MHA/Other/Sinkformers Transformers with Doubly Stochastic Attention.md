@@ -8,14 +8,14 @@
 
 ## 整体思路以及计算方式
 
-论文观察了一个有趣的性质，Attention Matrix是按行归一化（$\sum_{j}p_{ij}=1$），但是训练后的模型大部分情形也能满足列归一化：$\sum_{i}p_{ij}=1$，于是作者提出了如下改进方式：
+论文观察了一个有趣的性质，Attention Matrix是按行归一化（$$\sum_{j}p_{ij}=1$$），但是训练后的模型大部分情形也能满足列归一化：$$\sum_{i}p_{ij}=1$$，于是作者提出了如下改进方式：
 
-- 定义$\mathbf K^0=\exp(\mathbf C)\in \mathbb R^{n\times c}$
+- 定义$$\mathbf K^0=\exp(\mathbf C)\in \mathbb R^{n\times c}$$
 
 - 定义：
 
-  -  行归一化：$\left(N_{R}(\mathrm K)\right)_{ij}=\frac{\mathrm K_{ij}}{\sum_{l=1}^{n} \mathrm K_{il} }$
-  -  列归一化：$\left(N_{C}(\mathrm K)\right)_{ij}=\frac{\mathrm K_{ij}}{\sum_{l=1}^{n} \mathrm K_{lj} }$
+  -  行归一化：$$\left(N_{R}(\mathrm K)\right)_{ij}=\frac{\mathrm K_{ij}}{\sum_{l=1}^{n} \mathrm K_{il} }$$
+  -  列归一化：$$\left(N_{C}(\mathrm K)\right)_{ij}=\frac{\mathrm K_{ij}}{\sum_{l=1}^{n} \mathrm K_{lj} }$$
 
 - 执行如下操作：
   
@@ -42,7 +42,7 @@
 
 ## 时间复杂度
 
-增加了时间复杂度，但总体还是$O(n^2d)$。
+增加了时间复杂度，但总体还是$$O(n^2d)$$。
 
 
 

@@ -23,15 +23,15 @@ $$
 $$
 p(j | i)=\sum_{r=0}^{n_{i}} p\left(j, \Omega_{i}^{r} | i\right)=\sum_{r=0}^{n_{i}} p\left(j | \Omega_{i}^{r}, i\right) p\left(\Omega_{i}^{r} | i\right)=p\left(j | \Omega_{i}^{r_{j}}, i\right) p\left(\Omega_{i}^{r_{j}} | i\right) \tag 2
 $$
-其中$\Omega_i$表示$i$可取的全部集合全体，$\Omega_{i}^r$表示集合分解：
+其中$$\Omega_i$$表示$$i$$可取的全部集合全体，$$\Omega_{i}^r$$表示集合分解：
 $$
 \cup_{r=0}^{n_{i}} \Omega_{i}^{r}=\Omega_{i}, \Omega_{i}^{r} \cap \Omega_{i}^{s}=\varnothing, \forall r \neq s
 $$
-因为这里$i, j$都属于：
+因为这里$$i, j$$都属于：
 $$
 [L]=\{k| 1\le k \le L, k\in \mathbb Z\}
 $$
-所以根据上述分解，有且仅有一个$r_j$，使得：
+所以根据上述分解，有且仅有一个$$r_j$$，使得：
 $$
 p\left(j | \Omega_{i}^{r_{j}}, i\right) \neq 0
 $$
@@ -49,9 +49,9 @@ $$
 $$
 中括号内有三项：
 
-- $\tilde{p}(j | i) \propto \exp \left(\frac{q_{i}}{\sqrt{d}} k_{j}^{\top}\right)$
-- $p\left(\Omega_{i}^{r} | i\right) \propto \exp \left(\frac{q_{i}}{\sqrt{d}} k_{\Omega_{i}^{r}}^{\top}\right)$
-- $p\left(j | \Omega_{i}^{r}\right) \propto \exp \left(\frac{q_{\Omega_{i}^{r}}}{\sqrt{d}} k_{j}^{\top}\right)$
+- $$\tilde{p}(j | i) \propto \exp \left(\frac{q_{i}}{\sqrt{d}} k_{j}^{\top}\right)$$
+- $$p\left(\Omega_{i}^{r} | i\right) \propto \exp \left(\frac{q_{i}}{\sqrt{d}} k_{\Omega_{i}^{r}}^{\top}\right)$$
+- $$p\left(j | \Omega_{i}^{r}\right) \propto \exp \left(\frac{q_{\Omega_{i}^{r}}}{\sqrt{d}} k_{j}^{\top}\right)$$
 
 划分集合的方式见论文。
 
@@ -59,7 +59,7 @@ $$
 
 ## 时间复杂度
 
-$O(n\sqrt n)$或$O(n\log n)$。
+$$O(n\sqrt n)$$或$$O(n\log n)$$。
 
 
 

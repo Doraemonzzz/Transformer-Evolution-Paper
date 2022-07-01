@@ -14,9 +14,9 @@
 $$
 \mathbb{P}\left({q}_{i} | {t}_{j}=1\right)=\mathcal{N}\left({q}_{i} |{k}_{j}, \sigma_{j}^{2} {I}\right)
 $$
-其中等号左边的概率表示$q_i$和$k_j$有交互的概率（相当于Softmax中$q_i$和$k_j$对应的权重）。
+其中等号左边的概率表示$$q_i$$和$$k_j$$有交互的概率（相当于Softmax中$$q_i$$和$$k_j$$对应的权重）。
 
-通过该假设，以及$q_i, k_j$模长相等的假设，可以得到Softmax函数。
+通过该假设，以及$$q_i, k_j$$模长相等的假设，可以得到Softmax函数。
 
 随后作者对上式进行推广，利用GMM可以拟合任意分布，作者假设：
 $$
@@ -32,7 +32,7 @@ $$
 $$
 Linear版本：
 
-上述方法可以推广到Linear Attention，唯一的区别就是增加了权重$\pi_{jr}$：
+上述方法可以推广到Linear Attention，唯一的区别就是增加了权重$$\pi_{jr}$$：
 $$
 {h}_{i}=\frac{\sum_{j} \sum_{r} \pi_{j r} \phi\left({q}_{i}\right)^{\top} \phi\left({k}_{j r}\right) {v}_{j}}{\sum_{j} \sum_{r} \pi_{j r} \phi\left({q}_{i}\right)^{\top} \phi\left({k}_{j r}\right)}=\frac{\phi\left({q}_{i}\right)^{\top} \sum_{j} \sum_{r} \pi_{j r} \phi\left({k}_{j r}\right) {v}_{j}^{\top}}{\phi\left({q}_{i}\right)^{\top} \sum_{j} \sum_{r} \pi_{j r} \phi\left({k}_{j r}\right)}
 $$
@@ -44,7 +44,7 @@ $$
 
 ## 时间复杂度
 
-Vanilla版本为$O(N^2d)$，Linear版本为$O(Nd^2)$。
+Vanilla版本为$$O(N^2d)$$，Linear版本为$$O(Nd^2)$$。
 
 
 

@@ -18,8 +18,8 @@ ELECTRA引入了一种新的预训练方式。
 步骤如下：
 
 - 首先由Generator和Discriminator，Generator通常为一个MLM，Discriminator为ELECTRA
-- Generator：给定一段文本$x_0\in \mathbb R^{n\times d}$，首先mask掉一部分内容得到$x_1\in \mathbb R^{n\times d}$，喂给MLM得到输出$x_2\in \mathbb R^{n\times m}$，$m$为词表大小，根据$x_2$对被mask掉的部分进行采样，然后和未被mask掉的部分拼接得到$x_3\in \mathbb R^{n\times d}$，然后输出给Discriminator；
-- Discriminator：给定$x_3\in \mathbb R^{n\times d}$，得到输出$x_4\in \mathbb R^{n\times 2}$，然后判断被mask掉的部分是否和原来相同；
+- Generator：给定一段文本$$x_0\in \mathbb R^{n\times d}$$，首先mask掉一部分内容得到$$x_1\in \mathbb R^{n\times d}$$，喂给MLM得到输出$$x_2\in \mathbb R^{n\times m}$$，$$m$$为词表大小，根据$$x_2$$对被mask掉的部分进行采样，然后和未被mask掉的部分拼接得到$$x_3\in \mathbb R^{n\times d}$$，然后输出给Discriminator；
+- Discriminator：给定$$x_3\in \mathbb R^{n\times d}$$，得到输出$$x_4\in \mathbb R^{n\times 2}$$，然后判断被mask掉的部分是否和原来相同；
 
 
 
@@ -33,7 +33,7 @@ ELECTRA引入了一种新的预训练方式。
 
 本身就是一种预训练方式，主要修改了loss：
 $$
-\sum_{\boldsymbol{x} \in \mathcal{X}} \mathcal{L}_{\mathrm{MLM}}\left(\boldsymbol{x}, \theta_{G}\right)+\lambda \mathcal{L}_{\text {Disc }}\left(\boldsymbol{x}, \theta_{D}\right)
+\sum_{\mathbf {x} \in \mathcal{X}} \mathcal{L}_{\mathrm{MLM}}\left(\mathbf {x}, \theta_{G}\right)+\lambda \mathcal{L}_{\text {Disc }}\left(\mathbf {x}, \theta_{D}\right)
 $$
 
 

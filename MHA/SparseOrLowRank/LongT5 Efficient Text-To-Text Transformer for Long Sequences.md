@@ -14,17 +14,17 @@
 
 Local Attention：
 
-每个token只和附近$2r+1$个token交互。
+每个token只和附近$$2r+1$$个token交互。
 
 Global Attention：
 
-将$n$个token按每组$l$个划分，组内token取均值，这样一共得到$n/l$个token，每个token和这$n/l$个token交互。
+将$$n$$个token按每组$$l$$个划分，组内token取均值，这样一共得到$$n/l$$个token，每个token和这$$n/l$$个token交互。
 
 
 
 ## 时间复杂度
 
-时间复杂度为$O(n(2r+1)d + n^2 /l d)$。
+时间复杂度为$$O(n(2r+1)d + n^2 /l d)$$。
 
 
 

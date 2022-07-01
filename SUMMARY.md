@@ -41,7 +41,21 @@
   - [MatrixMethod](./MHA/MatrixMethod/README.md)
     - [Skyformer Remodel Self-Attention with Gaussian Kernel and Nyström Method](./MHA/MatrixMethod/001.md)
   
-- 
+- [Normalize_And_Residual](./Normalize_And_Residual/README.md)
+
+  - [ReZero is All You Need Fast Convergence at Large Depth](./Normalize_And_Residual/001.md)
+  - [Batch Normalization Biases Residual Blocks Towards the Identity Function in Deep Networks](./Normalize_And_Residual/002.md)
+  - [Improving Deep Transformer with Depth-Scaled Initialization and Merged Attention](./Normalize_And_Residual/003.md)
+  - [RealFormer Transformer Likes Residual Attention](./Normalize_And_Residual/004.md)
+  - [On Layer Normalizations and Residual Connections in Transformers](./Normalize_And_Residual/005.md)
+
+- Pe
+
+- Pretrain
+
+- Softmax
+
+- Others
 
   
 

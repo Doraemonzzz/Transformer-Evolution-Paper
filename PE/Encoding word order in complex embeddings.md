@@ -19,18 +19,18 @@
 $$
 f(j, p o s)=f_{w e}(j)+f_{p e}(p o s)
 $$
-其中$j$表示词的index，pos表示该词对应的位置。作者认为这种方式无法表示相对位置关系，给出了另一种位置编码方式为：
+其中$$j$$表示词的index，pos表示该词对应的位置。作者认为这种方式无法表示相对位置关系，给出了另一种位置编码方式为：
 $$
 f(j, {pos})={g}_{j}({pos})
 $$
 为了给出合理的位置编码，作者提出了两个位置编码应该满足的形式：
 
-1. 存在函数$w$，满足：
+1. 存在函数$$w$$，满足：
    $$
    g(pos+n)=w(n)g(pos)
    $$
 
-2. 位置函数$g$有界：
+2. 位置函数$$g$$有界：
    $$
    \exists \delta \in \mathbb{R}^{+}, \forall {pos} \in \mathbb{N},|g({pos})| \leq \delta
    $$
@@ -43,7 +43,7 @@ $$
 $$
 g(pos)=z_{2} z_{1}^{pos }=r_{2} e^{i \theta_{2}}\left(r_{1} e^{i \theta_{1}}\right)^{pos }=r_{2} r_{1}^{pos } e^{i\left(\theta_{2}+\theta_{1}  pos \right)} \text { subject to }\left|r_{1}\right| \leq 1
 $$
-特别的，取$r_1=1$，那么上式可以化简为：
+特别的，取$$r_1=1$$，那么上式可以化简为：
 $$
 g(pos)=r_{2}e^{i\left(\theta_{2}+\theta_{1}  pos \right)}\triangleq r e^{i(\omega {pos}+\theta)}
 $$
@@ -55,7 +55,7 @@ $$
 
 ## 时间复杂度
 
-假设原始的position embedding形状为$L\times D$，那么Complex Embedding的参数数量为$3\times L\times D$（因为涉及到$r,w ,\theta$），所以该方法会增加空间复杂度；另外，由于复数的分为实部和虚部，所以计算的时候时间复杂度会乘以2。
+假设原始的position embedding形状为$$L\times D$$，那么Complex Embedding的参数数量为$$3\times L\times D$$（因为涉及到$$r,w ,\theta$$），所以该方法会增加空间复杂度；另外，由于复数的分为实部和虚部，所以计算的时候时间复杂度会乘以2。
 
 
 

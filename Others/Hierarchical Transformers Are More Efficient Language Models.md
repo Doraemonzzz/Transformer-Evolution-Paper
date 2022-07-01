@@ -14,7 +14,7 @@
 
 ## 时间复杂度
 
-假设downsample的比例为$k$，那么时间复杂度为$O\left(\frac{n^2 d}{k^2}\right)$。
+假设downsample的比例为$$k$$，那么时间复杂度为$$O\left(\frac{n^2 d}{k^2}\right)$$。
 
 
 

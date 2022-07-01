@@ -10,10 +10,10 @@
 
 思路非常简单，降低infercence时间复杂度：
 
-- 输入：$X\in \mathbb R^{n\times d}$
-- $W_1= W_QW_K^T\in \mathbb R^{d\times d}, W_2= W_v W_o \in \mathbb R^{d\times d}$
-- $S_1 = XW_1 X^T \in \mathbb R^{n\times n}(=QK^T)$
-- $O_1=\mathrm{Softmax(S_1)}XW_2\in \mathbb R^{n\times d}$
+- 输入：$$X\in \mathbb R^{n\times d}$$
+- $$W_1= W_QW_K^{\top} \in \mathbb R^{d\times d}, W_2= W_v W_o \in \mathbb R^{d\times d}$$
+- $$S_1 = XW_1 X^{\top}  \in \mathbb R^{n\times n}(=QK^{\top} )$$
+- $$O_1=\mathrm{Softmax(S_1)}XW_2\in \mathbb R^{n\times d}$$
 
 
 

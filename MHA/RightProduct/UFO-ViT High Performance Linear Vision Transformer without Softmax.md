@@ -8,19 +8,19 @@
 
 ## 整体思路以及计算方式
 
-依然是利用了linear attention的方式，只不过这里$Q,K$没有过特征变换$\phi$，计算方式如下：
+依然是利用了linear attention的方式，只不过这里$$Q,K$$没有过特征变换$$\phi$$，计算方式如下：
 
-- 定义：$\operatorname{XN}(x):=\frac{\gamma x}{\sqrt{\sum_{i=0}^{h}\|x\|^{2}}}$
-- $Q,K, V = XW_Q, XW_K, XW_V \in \mathbb R^{n\times d}$
-- $Y_1 = \mathrm{XN}_{\mathrm{axis=1}}(Q)$
-- $Y_2=\mathrm{XN}_{\mathrm{axis=0}}(K^T V)$
-- $O=Y_1 Y_2$
+- 定义：$$\operatorname{XN}(x):=\frac{\gamma x}{\sqrt{\sum_{i=0}^{h}\|x\|^{2}}}$$
+- $$Q,K, V = XW_Q, XW_K, XW_V \in \mathbb R^{n\times d}$$
+- $$Y_1 = \mathrm{XN}_{\mathrm{axis=1}}(Q)$$
+- $$Y_2=\mathrm{XN}_{\mathrm{axis=0}}(K^{\top}  V)$$
+- $$O=Y_1 Y_2$$
 
 
 
 ## 时间复杂度
 
-线性时间复杂度，依然是$O(nd^2)$。
+线性时间复杂度，依然是$$O(nd^2)$$。
 
 
 
