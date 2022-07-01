@@ -19,7 +19,7 @@
 - for $$t=0,\ldots ,T-1$$:
   - $$\mathrm{slots}_{\mathrm{prev}}=\mathrm{slots}\in \mathbb R^{K\times d_2}$$
   - $$q= \mathrm{slots} W_q \in \mathbb R^{K\times d},k=x W_k\in \mathbb R^{N\times d}, v=xW_v \in \mathbb R^{N\times d}$$
-  - $$\mathrm{attn}=\mathrm{SoftMax}(qk^{\top} , \mathrm{dim}=0)\in \mathbb R^{K\times N}$$
+  - $$\mathrm{attn}=\mathrm{Softmax}(qk^{\top} , \mathrm{dim}=0)\in \mathbb R^{K\times N}$$
   - $$\mathrm{updates=attn}.v\in \mathbb R^{K\times d}$$
   - $$\mathrm{slots= GRU(slots_{prev}, updates)} \in \mathbb R^{K\times d_2}$$
 

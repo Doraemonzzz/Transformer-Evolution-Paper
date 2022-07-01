@@ -8,7 +8,7 @@
 
 ## 整体思路以及计算方式
 
-本文对$$\mathrm{MHA}$$中$$\mathrm{SoftMax}$$归一化方式提出了疑问，通过理论，实验的方式证明了其他归一化方式也能达到相当的效果。原文测试了很多种方法，这里给出效果最好的一种$$\mathrm{Normalized Attention Pooling (NAP)}$$的计算方式：
+本文对$$\mathrm{MHA}$$中$$\mathrm{Softmax}$$归一化方式提出了疑问，通过理论，实验的方式证明了其他归一化方式也能达到相当的效果。原文测试了很多种方法，这里给出效果最好的一种$$\mathrm{Normalized Attention Pooling (NAP)}$$的计算方式：
 
 - 给定$$q, k, v\in \mathbb R^{n\times d}$$
 
@@ -64,5 +64,5 @@
 
 总结：
 
-- 讨论了$$\mathrm{SoftMax}$$是否必要的问题，从验证实验上来说不是必须的；
+- 讨论了$$\mathrm{Softmax}$$是否必要的问题，从验证实验上来说不是必须的；
 - 比较简单，值得复现；

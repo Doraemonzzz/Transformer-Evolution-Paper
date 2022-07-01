@@ -36,7 +36,7 @@ $$
 
 - Soft VQ
   - for $$k=1,\ldots, K$$:
-    - $${C} \leftarrow \operatorname{SoftMax}\left(\frac{1}{T} \operatorname{cosine}({D},{X})\right)$$
+    - $${C} \leftarrow \operatorname{Softmax}\left(\frac{1}{T} \operatorname{cosine}({D},{X})\right)$$
     - $${D} \leftarrow {X} \mathbf {C}^{\top} \operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}$$
   - return $$\bar X =DC$$
 - NMF with MU
@@ -51,9 +51,9 @@ $$
 
 Soft VQ时间复杂度：
 
-- $${C} \leftarrow \operatorname{SoftMax}\left(\frac{1}{T} \operatorname{cosine}({D},{X})\right)$$，所以时间复杂度为$$O(nrd)$$
+- $${C} \leftarrow \operatorname{Softmax}\left(\frac{1}{T} \operatorname{cosine}({D},{X})\right)$$，所以时间复杂度为$$O(nrd)$$
   - $$\operatorname{cosine}({D},{X})$$需要计算$$D^{\top}  X$$，即$$r\times d,d\times n\to  r\times n$$，所以时间复杂度为$$O(nrd)$$
-  - $$ \operatorname{SoftMax}$$：$$r\times n \to r\times n$$，所以时间复杂度为所以时间复杂度为$$O(nr)$$
+  - $$ \operatorname{Softmax}$$：$$r\times n \to r\times n$$，所以时间复杂度为所以时间复杂度为$$O(nr)$$
   - 总时间复杂度为$$O(nrd)$$
 - $${D} \leftarrow {X} {C}^{\top} \operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}:$$
   - $$\operatorname{diag}\left({C} \mathbf{1}_{n}\right)^{-1}:r\times n,n\times 1 \to r\times 1 \to r\times r $$，时间复杂度为$$O(nr)$$

@@ -16,7 +16,7 @@ IGLOO-base（记为$$f$$）：
 - $$X_1 = \mathrm{Conv1d}(X)\in \mathbb R^{n\times d_1}$$
 - 降采样：$$X_2= \mathrm{DownSample}(X_1)\in \mathbb R^{m\times d_1}$$
 - 重复降采样$$l$$次得到：$$X_3 =\mathrm{Concat}([X_2]_1,\ldots, [X_2]_l)\in \mathbb R^{l\times m \times d_1}$$
-- $$O_1=\mathrm{sum}(X_3, d=1,2)\in \mathbb R^{l}$$
+- $$O_1=\mathrm{Sum}(X_3, d=1,2)\in \mathbb R^{l}$$
 - 重复$$k$$次可得$$O\in \mathbb R^{k\times l}$$
 
 IGLOO-seq：
