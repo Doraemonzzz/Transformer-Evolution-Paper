@@ -41,7 +41,7 @@
      - 各种归一化方式，具体类型使用文字说明，符号中不体现，$$d$$为归一化维度，不指定时为最后一维;
    - $$\mathrm{MHA}(\mathbf X, \mathbf Y):\mathbb R^{n\times d}\times \mathbb R^{m\times d}\to \mathbb R^{n\times d}$$：
      - 一种$$\mathrm {MHA}$$的接口，最具体来说$$\mathbf X$$对应query，$$\mathbf Y$$对应key, value；
-   - $$\mathrm{MHA}(\mathbf Q, \mathbf K,\mathbf V):\mathbb R^{n\times d}\times \mathbb R^{m\times d}\times \mathbb R^{m\times d}\to \mathbb R^{n\times d}$$
+   - $$\mathrm{MHA}(\mathbf Q, \mathbf K,\mathbf V):\mathbb R^{n\times d}\times \mathbb R^{m\times d}\times \mathbb R^{m\times d}\to \mathbb R^{n\times d}$$：
      - 另一种$$\mathrm{MHA}$$的接口，不常使用；
    - $$\mathrm {FFN}(\mathbf{X}): \mathbb R^{n\times  d} \to \mathbb R^{n\times d}$$：
      - Transformer中FFN层；

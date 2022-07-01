@@ -49,7 +49,18 @@
   - [RealFormer Transformer Likes Residual Attention](./Normalize_And_Residual/004.md)
   - [On Layer Normalizations and Residual Connections in Transformers](./Normalize_And_Residual/005.md)
 
-- Pe
+- [Pe](./Pe/README.md)
+
+  - [A Simple and Effective Positional Encoding for Transformers](./Pe/001.md)
+  - [DeBERTa Decoding-enhanced BERT with Disentangled Attention](./Pe/002.md)
+  - [DecBERT Enhancing the Language Understanding of BERT with Causal Attention Masks](./Pe/003.md)
+  - [Encoding word order in complex embeddings](./Pe/004.md)
+  - [Improve Transformer Models with Better Relative Position Embeddings](./Pe/005.md)
+  - [KERPLE Kernelized Relative Positional Embedding for Length Extrapolation](./Pe/006.md)
+  - [PermuteFormer Efficient Relative Position Encoding for Long Sequences](./Pe/007.md)
+  - [Rethinking Positional Encoding in Language Pre-training](./Pe/008.md)
+  - [Transformer-XL Attentive Language Models Beyond a Fixed-Length Context](./Pe/009.md)
+  - [Translational Equivariance in Kernelizable Attention](./Pe/010.md)
 
 - Pretrain
 
