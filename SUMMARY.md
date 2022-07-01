@@ -62,9 +62,17 @@
   - [Transformer-XL Attentive Language Models Beyond a Fixed-Length Context](./Pe/009.md)
   - [Translational Equivariance in Kernelizable Attention](./Pe/010.md)
 
-- Pretrain
+- [Pretrain](./Pretrain/README.md)
 
-- Softmax
+  - [XLNet Generalized Autoregressive Pretraining for Language Understanding](./Pretrain/001.md)
+  - [Transcormer Transformer for Sentence Scoring with Sliding Language Modeling](./Pretrain/002.md)
+  - [Optimus Organizing Sentences via Pre-trained Modeling of a Latent Space](./Pretrain/003.md)
+  - [ELECTRA Pre-training Text Encoders as Discriminators Rather Than Generators](./Pretrain/004.md)
+
+- [Softmax](./Softmax/README.md)
+
+  - [Transformer with a Mixture of Gaussian Keys](./Softmax/001.md)
+  - [Normalized Attention Without Probability Cage](./Softmax/002.md)
 
 - Others
 
