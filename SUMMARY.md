@@ -11,6 +11,7 @@
   - [Deeper vs Wider A Revisit of Transformer Configuration](./Arch/003.md)
   - [Perceiver General Perception with Iterative Attention](./Arch/004.md)
   - [General-purpose, long-context autoregressive modeling with Perceiver AR](./Arch/005.md)
+  - [Hierarchical Transformers Are More Efficient Language Models](./Arch/006.md)
   
 - [FFN](./FFN/README.md)
 
@@ -74,15 +75,20 @@
   - [Transformer with a Mixture of Gaussian Keys](./Softmax/001.md)
   - [Normalized Attention Without Probability Cage](./Softmax/002.md)
 
-- Others
+- [Others](./Others/README.md)
 
+  - [Accelerating Neural Transformer via an Average Attention Network](./Others/001.md)
+- [Do Transformer Modifications Transfer Across Implementations and Applications](./Others/002.md)
+  - [Is Attention Better Than Matrix Decomposition](./Others/003.md)
+- [Object-Centric Learning with Slot Attention](./Others/004.md)
   
 
   
 
   
-
   
-
+  
+  
+  
   
 
