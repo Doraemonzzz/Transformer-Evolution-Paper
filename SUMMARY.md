@@ -41,6 +41,7 @@
 
   - [MatrixMethod](./MHA/MatrixMethod/README.md)
     - [Skyformer Remodel Self-Attention with Gaussian Kernel and Nyström Method](./MHA/MatrixMethod/001.md)
+    - [Is Attention Better Than Matrix Decomposition](./MHA/MatrixMethod/002.md)
   
 - [Normalize_And_Residual](./Normalize_And_Residual/README.md)
 
@@ -78,14 +79,13 @@
 - [Others](./Others/README.md)
 
   - [Accelerating Neural Transformer via an Average Attention Network](./Others/001.md)
-- [Do Transformer Modifications Transfer Across Implementations and Applications](./Others/002.md)
-  - [Is Attention Better Than Matrix Decomposition](./Others/003.md)
-- [Object-Centric Learning with Slot Attention](./Others/004.md)
+  - [Do Transformer Modifications Transfer Across Implementations and Applications](./Others/002.md)
+  - [Object-Centric Learning with Slot Attention](./Others/003.md)
+  
   
 
   
 
-  
   
   
   
