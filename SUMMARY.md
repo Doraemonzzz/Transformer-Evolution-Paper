@@ -23,6 +23,7 @@
   - [S2-MLP Spatial-Shift MLP Architecture for Vision](./FFN/006.md)
   - [S2-MLPv2 Improved Spatial-Shift MLP Architecture for Vision](./FFN/007.md)
   - [HyperMixer An MLP-based Green AI Alternative to Transformers](./FFN/008.md)
+  - [DeFINE: DEep Factorized INput Token Embeddings for Neural Sequence Modeling & DeLighT: Deep and Light-weight Transformer](./FFN/009.md)
   
 - [Head](./Head/README.md)
 
@@ -36,6 +37,7 @@
   - [Do Transformers Need Deep Long-Range Memory](./Memory/004.md)
   - [LaMemo Language Modeling with Look-Ahead Memory](./Memory/005.md)
   - [GMAT Global Memory Augmentation for Transformers](./Memory/006.md)
+  - [Block-Recurrent Transformers](./Memory/007.md)
   
 - [MHA](./MHA/README.md)
 
