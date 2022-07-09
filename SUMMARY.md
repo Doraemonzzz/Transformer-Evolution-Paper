@@ -28,6 +28,7 @@
 - [Head](./Head/README.md)
 
   - [Multi-Head Attention Collaborate Instead of Concatenate](./Head/001.md)
+  - [Fast Transformer Decoding: One Write-Head is All You Need](./Head/002.md)
 
 - [Memory](./Memory/README.md)
 
