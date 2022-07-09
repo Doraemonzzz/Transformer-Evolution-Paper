@@ -52,6 +52,7 @@
   - [Improving Deep Transformer with Depth-Scaled Initialization and Merged Attention](./Normalize_And_Residual/003.md)
   - [RealFormer Transformer Likes Residual Attention](./Normalize_And_Residual/004.md)
   - [On Layer Normalizations and Residual Connections in Transformers](./Normalize_And_Residual/005.md)
+  - [Transformers without Tears: Improving the Normalization of Self-Attention](./Normalize_And_Residual/006.md)
 
 - [Pe](./Pe/README.md)
 
