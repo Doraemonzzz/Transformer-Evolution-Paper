@@ -39,6 +39,7 @@
   - [LaMemo Language Modeling with Look-Ahead Memory](./Memory/005.md)
   - [GMAT Global Memory Augmentation for Transformers](./Memory/006.md)
   - [Block-Recurrent Transformers](./Memory/007.md)
+  - [Augmenting Self-attention with Persistent Memory](./Memory/008.md)
   
 - [MHA](./MHA/README.md)
 
@@ -87,11 +88,12 @@
   - [Accelerating Neural Transformer via an Average Attention Network](./Others/001.md)
   - [Do Transformer Modifications Transfer Across Implementations and Applications](./Others/002.md)
   - [Object-Centric Learning with Slot Attention](./Others/003.md)
+  - [Do Transformer Modifications Transfer Across Implementations and Applications?](./Others/004.md)
   
+
   
 
   
-
   
   
   
