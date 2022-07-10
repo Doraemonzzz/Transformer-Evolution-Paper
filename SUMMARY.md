@@ -12,6 +12,7 @@
   - [Perceiver General Perception with Iterative Attention](./Arch/004.md)
   - [General-purpose, long-context autoregressive modeling with Perceiver AR](./Arch/005.md)
   - [Hierarchical Transformers Are More Efficient Language Models](./Arch/006.md)
+  - [Branchformer: Parallel MLP-Attention Architectures to Capture Local and Global Context for Speech Recognition and Understanding](./Arch/007.md)
   
 - [FFN](./FFN/README.md)
 
