@@ -41,6 +41,7 @@
   - [GMAT Global Memory Augmentation for Transformers](./Memory/006.md)
   - [Block-Recurrent Transformers](./Memory/007.md)
   - [Augmenting Self-attention with Persistent Memory](./Memory/008.md)
+  - [Recurrent Memory Transformer](./Memory/009.md)
   
 - [MHA](./MHA/README.md)
 
