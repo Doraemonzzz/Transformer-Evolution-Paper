@@ -25,6 +25,7 @@
   - [S2-MLPv2 Improved Spatial-Shift MLP Architecture for Vision](./FFN/007.md)
   - [HyperMixer An MLP-based Green AI Alternative to Transformers](./FFN/008.md)
   - [DeFINE: DEep Factorized INput Token Embeddings for Neural Sequence Modeling & DeLighT: Deep and Light-weight Transformer](./FFN/009.md)
+  - [When Shift Operation Meets Vision Transformer: An Extremely Simple Alternative to Attention Mechanism](./FFN/010.md)
   
 - [Head](./Head/README.md)
 
