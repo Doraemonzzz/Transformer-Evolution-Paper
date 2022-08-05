@@ -26,6 +26,7 @@
   - [HyperMixer An MLP-based Green AI Alternative to Transformers](./FFN/008.md)
   - [DeFINE: DEep Factorized INput Token Embeddings for Neural Sequence Modeling & DeLighT: Deep and Light-weight Transformer](./FFN/009.md)
   - [When Shift Operation Meets Vision Transformer: An Extremely Simple Alternative to Attention Mechanism](./FFN/010.md)
+  - [Sparse MLP for Image Recognition: Is Self-Attention Really Necessary?](./FFN/011.md)
   
 - [Head](./Head/README.md)
 
