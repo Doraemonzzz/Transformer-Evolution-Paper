@@ -60,6 +60,7 @@
   - [On Layer Normalizations and Residual Connections in Transformers](./Normalize_And_Residual/005.md)
   - [Transformers without Tears: Improving the Normalization of Self-Attention](./Normalize_And_Residual/006.md)
   - [Query-Key Normalization for Transformers](./Normalize_And_Residual/007.md)
+  - [Understanding the difficulty of training transformers](./Normalize_And_Residual/008.md)
 
 - [Pe](./Pe/README.md)
 
@@ -94,14 +95,31 @@
   - [Do Transformer Modifications Transfer Across Implementations and Applications](./Others/002.md)
   - [Object-Centric Learning with Slot Attention](./Others/003.md)
   - [Do Transformer Modifications Transfer Across Implementations and Applications?](./Others/004.md)
+  - [Why self-attention is Natural for Sequence-to-Sequence Problems? A Perspective from Symmetries](./Others/004.md)
+  
+- [StateSpace](./StateSpace/README.md)
+  
+  - [Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks](./StateSpace/001.md)
+  - [Parallelizing Legendre Memory Unit Training](./StateSpace/002.md)
+  - [Simplified State Space Layers for Sequence Modeling](./StateSpace/003.md)
+  
+- [TrainingTrick](./TrainingTrick/README.md)
+
+  - [What Language Model to Train if You Have One Million GPU Hours?](./TrainingTrick/001.md)
+
+- 
+
+- 
+
+  
+
   
 
   
 
   
+
   
-  
-  
-  
+
   
 
