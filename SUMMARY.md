@@ -45,6 +45,7 @@
   - [Block-Recurrent Transformers](./Memory/007.md)
   - [Augmenting Self-attention with Persistent Memory](./Memory/008.md)
   - [Recurrent Memory Transformer](./Memory/009.md)
+  - [Memorizing Transformers](./Memory/010.md)
   
 - [MHA](./MHA/README.md)
 
@@ -107,6 +108,7 @@
 - [TrainingTrick](./TrainingTrick/README.md)
 
   - [What Language Model to Train if You Have One Million GPU Hours?](./TrainingTrick/001.md)
+  - [Cramming: Training a Language Model on a Single GPU in One Day](./TrainingTrick/002.md)
 
 - 
 
