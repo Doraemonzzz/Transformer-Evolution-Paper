@@ -105,6 +105,7 @@
   - [Parallelizing Legendre Memory Unit Training](./StateSpace/002.md)
   - [Simplified State Space Layers for Sequence Modeling](./StateSpace/003.md)
   - [Pretraining Without Attention](./StateSpace/004.md)
+  - [What Makes Convolutional Models Great on Long Sequence Modeling?](./StateSpace/005.md)
   
 - [Rnn](./Rnn/README.md)
 
