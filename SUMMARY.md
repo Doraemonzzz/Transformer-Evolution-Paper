@@ -104,7 +104,12 @@
   - [Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks](./StateSpace/001.md)
   - [Parallelizing Legendre Memory Unit Training](./StateSpace/002.md)
   - [Simplified State Space Layers for Sequence Modeling](./StateSpace/003.md)
+  - [Pretraining Without Attention](./StateSpace/004.md)
   
+- [Rnn](./Rnn/README.md)
+
+  - [When Attention Meets Fast Recurrence: Training Language Models with Reduced Compute](./Rnn/001.md)
+
 - [TrainingTrick](./TrainingTrick/README.md)
 
   - [What Language Model to Train if You Have One Million GPU Hours?](./TrainingTrick/001.md)
@@ -113,8 +118,6 @@
 - 
 
 - 
-
-  
 
   
 
