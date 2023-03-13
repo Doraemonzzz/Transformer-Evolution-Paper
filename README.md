@@ -49,6 +49,6 @@ $$
 
 ## TODO
 
-相对位置编码综述：
-
-- [https://arxiv.org/abs/2102.11090](https://arxiv.org/abs/2102.11090)
+- [] 部分文章的分类有点问题, 需要调整;
+- [] 添加FoundationModel(大模型)相关内容;
+- [] 更新目录;

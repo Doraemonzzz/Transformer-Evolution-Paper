@@ -49,9 +49,66 @@
   
 - [MHA](./MHA/README.md)
 
+  - [FFT](./MHA/FFT/README.md)
+    - [Fourier Neural Operator for Parametric Partial Differential Equations](./MHA/FFT/001.md)
+    - [Global Filter Networks for Image Classification](./MHA/FFT/002.md)
+    - [Adaptive Fourier Neural Operators: Efficient Token Mixers for Transformers](./MHA/FFT/003.md)
+    - [FNet: Mixing Tokens with Fourier Transforms](./MHA/FFT/004.md)
+
+  - [LocalGlobal](./MHA/LocalGlobal/README.md)
+    - [CrossFormer: A Versatile Vision Transformer Hinging on Cross-scale Attention](./MHA/LocalGlobal/001.md)
+    - [Nested Hierarchical Transformer: Towards Accurate, Data-Efficient and Interpretable Visual Understanding](./MHA/LocalGlobal/002.md)
+    - [Neighborhood Attention Transformer](./MHA/LocalGlobal/003.md)
+    - [FMMformer: Efficient and Flexible Transformer via Decomposed Near-field and Far-field Attention](./MHA/LocalGlobal/004.md)
+    - [Adaptive Attention Span in Transformers](./MHA/LocalGlobal/005.md)
+
   - [MatrixMethod](./MHA/MatrixMethod/README.md)
     - [Skyformer Remodel Self-Attention with Gaussian Kernel and Nyström Method](./MHA/MatrixMethod/001.md)
     - [Is Attention Better Than Matrix Decomposition](./MHA/MatrixMethod/002.md)
+  
+  - [RightProduct](./MHA/RightProduct/README.md)
+    - [Kronecker Attention Networks](./MHA/RightProduct/001.md)
+    - [An Attention Free Transformer](./MHA/RightProduct/002.md)
+    - [Transformer with Fourier Integral Attentions](./MHA/RightProduct/003.md)
+    - [Linear Complexity Randomized Self-attention Mechanism](./MHA/RightProduct/004.md)
+    - [UFO-ViT: High Performance Linear Vision Transformer without Softmax](./MHA/RightProduct/005.md)
+    - [XCiT: Cross-Covariance Image Transformers](./MHA/RightProduct/006.md)
+    - [SimpleTRON: Simple Transformer with O(N) Complexity](./MHA/RightProduct/007.md)
+    - [A Dot Product Attention Free Transformer](./MHA/RightProduct/008.md)
+    - [On Learning the Transformer Kernel](./MHA/RightProduct/009.md)
+    - [Momentum Transformer: Closing the Performance Gap Between Self-attention and Its Linearization](./MHA/RightProduct/010.md)
+
+  - [SparseOrLowRank](./MHA/SparseOrLowRank/README.md)
+    - [Explicit Sparse Transformer: Concentrated Attention Through Explicit Selection](./MHA/SparseOrLowRank/001.md)
+    - [Scatterbrain: Unifying Sparse and Low-rank Attention Approximation](./MHA/SparseOrLowRank/002.md)
+    - [Sparse Factorization of Large Square Matrices](./MHA/SparseOrLowRank/003.md)
+    - [Blockwise Self-Attention for Long Document Understanding](./MHA/SparseOrLowRank/004.md)
+    - [H-Transformer-1D: Fast One-Dimensional Hierarchical Attention for Sequences](./MHA/SparseOrLowRank/005.md)
+    - [ChunkFormer: Learning Long Time Series with Multi-stage Chunked Transformer](./MHA/SparseOrLowRank/006.md)
+    - [Enhancing the Locality and Breaking the Memory Bottleneck of Transformer on Time Series Forecasting](./MHA/SparseOrLowRank/007.md)
+    - [Fast Transformers with Clustered Attention](./MHA/SparseOrLowRank/008.md)
+    - [Long-Short Transformer: Efficient Transformers for Language and Vision](./MHA/SparseOrLowRank/009.md)
+    - [LongT5: Efficient Text-To-Text Transformer for Long Sequences](./MHA/SparseOrLowRank/010.md)
+    - [Luna: Linear Unified Nested Attention](./MHA/SparseOrLowRank/011.md)
+    - [Memory-efficient Transformers via Top-k Attention](./MHA/SparseOrLowRank/012.md)
+    - [Separable Self-attention for Mobile Vision Transformers](./MHA/SparseOrLowRank/013.md)
+    - [Simple Local Attentions Remain Competitive for Long-Context Tasks](./MHA/SparseOrLowRank/014.md)
+    - [You Only Sample (Almost) Once: Linear Cost Self-Attention Via Bernoulli Sampling](./MHA/SparseOrLowRank/015.md)
+
+  - [Others](./MHA/Others/README.md)
+    - [Synthesizer: Rethinking Self-Attention in Transformer Models](./MHA/Others/001.md)
+    - [Transformer Dissection: A Unified Understanding of Transformer's Attention via the Lens of Kern](./MHA/Others/002.md)
+    - [Combiner Full Attention Transformer with Sparse Computation Cost](./MHA/Others/003.md)
+    - [Ripple Attention for Visual Perception with Sub-quadratic Complexity](./MHA/Others/004.md)
+    - [Sinkformers: Transformers with Doubly Stochastic Attention](./MHA/Others/005.md)
+    - [SOFT: Softmax-free Transformer with Linear Complexity](./MHA/Others/006.md)
+    - [Value-aware Approximate Attention](./MHA/Others/007.md)
+    - [EL-Attention: Memory Efficient Lossless Attention for Generation](./MHA/Others/008.md)
+    - [Flowformer: Linearizing Transformers with Conservation Flows](./MHA/Others/009.md)
+    - [ETSformer: Exponential Smoothing Transformers for Time-series Forecasting](./MHA/Others/010.md)
+    - [IGLOO: Slicing the Features Space to Represent Sequences](./MHA/Others/011.md)
+    - [Swin Transformer V2: Scaling Up Capacity and Resolution](./MHA/Others/012.md)
+    - [Skip-Attention: Improving Vision Transformers by Paying Less Attention](./MHA/Others/013.md)
   
 - [Normalize_And_Residual](./Normalize_And_Residual/README.md)
 
@@ -92,13 +149,12 @@
   - [Normalized Attention Without Probability Cage](./Softmax/002.md)
 
 - [Others](./Others/README.md)
-
   - [Accelerating Neural Transformer via an Average Attention Network](./Others/001.md)
-  - [Do Transformer Modifications Transfer Across Implementations and Applications](./Others/002.md)
+  - [Do Transformer Modifications Transfer Across Implementations and Applications?](./Others/002.md)
   - [Object-Centric Learning with Slot Attention](./Others/003.md)
   - [Do Transformer Modifications Transfer Across Implementations and Applications?](./Others/004.md)
-  - [Why self-attention is Natural for Sequence-to-Sequence Problems? A Perspective from Symmetries](./Others/004.md)
-  
+  - [Why self-attention is Natural for Sequence-to-Sequence Problems? A Perspective from Symmetries](./Others/005.md)
+
 - [StateSpace](./StateSpace/README.md)
   
   - [Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks](./StateSpace/001.md)
@@ -110,8 +166,11 @@
 - [Rnn](./Rnn/README.md)
 
   - [When Attention Meets Fast Recurrence: Training Language Models with Reduced Compute](./Rnn/001.md)
+  - [Linear Transformers Are Secretly Fast Weight Programmers](./Rnn/002.md)
+  - [Going Beyond Linear Transformers with Recurrent Fast Weight Programmers](./Rnn/003.md)
+  - [RWKV](./Rnn/004.md)
 
-- [TrainingTrick](./TrainingTrick/README.md)
+- [FoundationModel](./FoundationModel/README.md)
 
   - [What Language Model to Train if You Have One Million GPU Hours?](./TrainingTrick/001.md)
   - [Cramming: Training a Language Model on a Single GPU in One Day](./TrainingTrick/002.md)
