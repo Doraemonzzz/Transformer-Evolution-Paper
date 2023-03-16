@@ -162,6 +162,7 @@
   - [Simplified State Space Layers for Sequence Modeling](./StateSpace/003.md)
   - [Pretraining Without Attention](./StateSpace/004.md)
   - [What Makes Convolutional Models Great on Long Sequence Modeling?](./StateSpace/005.md)
+  - [Hungry Hungry Hippos: Towards Language Modeling with State Space Models](./StateSpace/006.md)
   
 - [Rnn](./Rnn/README.md)
 
