@@ -155,22 +155,23 @@
   - [Do Transformer Modifications Transfer Across Implementations and Applications?](./Others/004.md)
   - [Why self-attention is Natural for Sequence-to-Sequence Problems? A Perspective from Symmetries](./Others/005.md)
 
-- [StateSpace](./StateSpace/README.md)
+- [LongConv](./LongConv/README.md)
   
-  - [Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks](./StateSpace/001.md)
-  - [Parallelizing Legendre Memory Unit Training](./StateSpace/002.md)
-  - [Simplified State Space Layers for Sequence Modeling](./StateSpace/003.md)
-  - [Pretraining Without Attention](./StateSpace/004.md)
-  - [What Makes Convolutional Models Great on Long Sequence Modeling?](./StateSpace/005.md)
-  - [Hungry Hungry Hippos: Towards Language Modeling with State Space Models](./StateSpace/006.md)
+  - [Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks](./LongConv/001.md)
+  - [Parallelizing Legendre Memory Unit Training](./LongConv/002.md)
+  - [Simplified State Space Layers for Sequence Modeling](./LongConv/003.md)
+  - [Pretraining Without Attention](./LongConv/004.md)
+  - [What Makes Convolutional Models Great on Long Sequence Modeling?](./LongConv/005.md)
+  - [Hungry Hungry Hippos: Towards Language Modeling with State Space Models](./LongConv/006.md)
+  - [Hyena Hierarchy: Towards Larger Convolutional Language Models](./LongConv/007.md)
+  - [RWKV](./LongConv/008.md)
   
 - [Rnn](./Rnn/README.md)
 
   - [When Attention Meets Fast Recurrence: Training Language Models with Reduced Compute](./Rnn/001.md)
   - [Linear Transformers Are Secretly Fast Weight Programmers](./Rnn/002.md)
   - [Going Beyond Linear Transformers with Recurrent Fast Weight Programmers](./Rnn/003.md)
-  - [RWKV](./Rnn/004.md)
-
+  
 - [FoundationModel](./FoundationModel/README.md)
 
   - [What Language Model to Train if You Have One Million GPU Hours?](./TrainingTrick/001.md)
