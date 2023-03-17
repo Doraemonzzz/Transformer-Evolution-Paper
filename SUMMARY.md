@@ -174,8 +174,8 @@
   
 - [FoundationModel](./FoundationModel/README.md)
 
-  - [What Language Model to Train if You Have One Million GPU Hours?](./TrainingTrick/001.md)
-  - [Cramming: Training a Language Model on a Single GPU in One Day](./TrainingTrick/002.md)
+  - [What Language Model to Train if You Have One Million GPU Hours?](./FoundationModel/001.md)
+  - [Cramming: Training a Language Model on a Single GPU in One Day](./FoundationModel/002.md)
 
 - 
 
