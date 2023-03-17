@@ -165,6 +165,7 @@
   - [Hungry Hungry Hippos: Towards Language Modeling with State Space Models](./LongConv/006.md)
   - [Hyena Hierarchy: Towards Larger Convolutional Language Models](./LongConv/007.md)
   - [RWKV](./LongConv/008.md)
+  - [Simple Hardware-Efficient Long Convolutions for Sequence Modeling](./LongConv/009.md)
   
 - [Rnn](./Rnn/README.md)
 
