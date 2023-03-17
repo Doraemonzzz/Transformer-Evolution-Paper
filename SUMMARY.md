@@ -166,6 +166,7 @@
   - [Hyena Hierarchy: Towards Larger Convolutional Language Models](./LongConv/007.md)
   - [RWKV](./LongConv/008.md)
   - [Simple Hardware-Efficient Long Convolutions for Sequence Modeling](./LongConv/009.md)
+  - [Time-aware large kernel convolutions](./LongConv/010.md)
   
 - [Rnn](./Rnn/README.md)
 
