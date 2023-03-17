@@ -167,6 +167,7 @@
   - [RWKV](./LongConv/008.md)
   - [Simple Hardware-Efficient Long Convolutions for Sequence Modeling](./LongConv/009.md)
   - [Time-aware large kernel convolutions](./LongConv/010.md)
+  - [Resurrecting Recurrent Neural Networks for Long Sequences](./LongConv/011.md)
   
 - [Rnn](./Rnn/README.md)
 
