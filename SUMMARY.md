@@ -174,6 +174,7 @@
   - [When Attention Meets Fast Recurrence: Training Language Models with Reduced Compute](./Rnn/001.md)
   - [Linear Transformers Are Secretly Fast Weight Programmers](./Rnn/002.md)
   - [Going Beyond Linear Transformers with Recurrent Fast Weight Programmers](./Rnn/003.md)
+  - [Parallelizing Linear Recurrent Neural Nets Over Sequence Length](./Rnn/004.md)
   
 - [FoundationModel](./FoundationModel/README.md)
 
