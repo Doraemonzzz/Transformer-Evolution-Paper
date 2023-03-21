@@ -175,6 +175,7 @@
   - [Linear Transformers Are Secretly Fast Weight Programmers](./Rnn/002.md)
   - [Going Beyond Linear Transformers with Recurrent Fast Weight Programmers](./Rnn/003.md)
   - [Parallelizing Linear Recurrent Neural Nets Over Sequence Length](./Rnn/004.md)
+  - [Quasi-recurrent neural networks](./Rnn/005.md)
   
 - [CrossAttention](./CrossAttention/README.md)
 
