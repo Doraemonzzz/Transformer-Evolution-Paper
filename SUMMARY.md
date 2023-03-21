@@ -176,6 +176,10 @@
   - [Going Beyond Linear Transformers with Recurrent Fast Weight Programmers](./Rnn/003.md)
   - [Parallelizing Linear Recurrent Neural Nets Over Sequence Length](./Rnn/004.md)
   
+- [CrossAttention](./CrossAttention/README.md)
+
+  - [Neural Machine Translation in Linear Time](./CrossAttention/001.md)
+
 - [FoundationModel](./FoundationModel/README.md)
 
   - [What Language Model to Train if You Have One Million GPU Hours?](./FoundationModel/001.md)
