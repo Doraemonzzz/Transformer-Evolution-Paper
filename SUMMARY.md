@@ -46,6 +46,7 @@
   - [Augmenting Self-attention with Persistent Memory](./Memory/008.md)
   - [Recurrent Memory Transformer](./Memory/009.md)
   - [Memorizing Transformers](./Memory/010.md)
+  - [Scaling Transformer to 1M tokens and beyond with RMT](./Memory/011.md)
   
 - [MHA](./MHA/README.md)
 
