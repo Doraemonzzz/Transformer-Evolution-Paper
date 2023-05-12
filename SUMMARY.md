@@ -62,6 +62,7 @@
     - [Neighborhood Attention Transformer](./MHA/LocalGlobal/003.md)
     - [FMMformer: Efficient and Flexible Transformer via Decomposed Near-field and Far-field Attention](./MHA/LocalGlobal/004.md)
     - [Adaptive Attention Span in Transformers](./MHA/LocalGlobal/005.md)
+    - [CoLT5: Faster Long-Range Transformers with Conditional Computation](./MHA/LocalGlobal/006.md)
 
   - [MatrixMethod](./MHA/MatrixMethod/README.md)
     - [Skyformer Remodel Self-Attention with Gaussian Kernel and Nyström Method](./MHA/MatrixMethod/001.md)
