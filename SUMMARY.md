@@ -191,7 +191,7 @@
 - [Inference](./Inference/README.md)
   - [Extrapolation](./Inference/Extrapolation/README.md)
     - [Parallel Context Windows for Large Language Models](./Inference/Extrapolation/001.md)
-  - [Structured Prompting: Scaling In-Context Learning to 1,000 Examples](./Inference/Extrapolation/002.md)
+  	- [Structured Prompting: Scaling In-Context Learning to 1,000 Examples](./Inference/Extrapolation/002.md)
     - [Naive Bayes-based Context Extension](./Inference/Extrapolation/003.md)
   
 - 
