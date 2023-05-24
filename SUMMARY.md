@@ -188,7 +188,9 @@
   - [What Language Model to Train if You Have One Million GPU Hours?](./FoundationModel/001.md)
   - [Cramming: Training a Language Model on a Single GPU in One Day](./FoundationModel/002.md)
 
-- 
+- [Inference](./Inference/README.md)
+  - [Extrapolation](./Inference/Extrapolation/README.md)
+    - [Parallel Context Windows for Large Language Models](./Inference/Extrapolation/001.md)
 
 - 
 
