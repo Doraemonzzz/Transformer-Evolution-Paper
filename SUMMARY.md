@@ -170,6 +170,9 @@
   - [Simple Hardware-Efficient Long Convolutions for Sequence Modeling](./LongConv/009.md)
   - [Time-aware large kernel convolutions](./LongConv/010.md)
   - [Resurrecting Recurrent Neural Networks for Long Sequences](./LongConv/011.md)
+  - [CKConv: Continuous Kernel Convolution For Sequential Data](./LongConv/012.md)
+  - [FlexConv: Continuous Kernel Convolutions with Differentiable Kernel Sizes](./LongConv/013.md)
+  - [Towards a General Purpose CNN for Long Range Dependencies in ND](./LongConv/014.md)
   
 - [Rnn](./Rnn/README.md)
 
