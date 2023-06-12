@@ -138,6 +138,7 @@
   - [Translational Equivariance in Kernelizable Attention](./Pe/010.md)
   - [Transformer Language Models without Positional Encodings Still Learn Positional Information](./Pe/011.md)
   - [Stable, Fast and Accurate: Kernelized Attention with Relative Positional Encoding](./Pe/012.md)
+  - [Randomized Positional Encodings Boost Length Generalization of Transformers](./Pe/013.md)
 
 - [Pretrain](./Pretrain/README.md)
 
