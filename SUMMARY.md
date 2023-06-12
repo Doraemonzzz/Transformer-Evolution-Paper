@@ -156,7 +156,7 @@
   - [Do Transformer Modifications Transfer Across Implementations and Applications?](./Others/002.md)
   - [Object-Centric Learning with Slot Attention](./Others/003.md)
   - [Do Transformer Modifications Transfer Across Implementations and Applications?](./Others/004.md)
-- [Why self-attention is Natural for Sequence-to-Sequence Problems? A Perspective from Symmetries](./Others/005.md)
+  - [Why self-attention is Natural for Sequence-to-Sequence Problems? A Perspective from Symmetries](./Others/005.md)
   
 - [LongConv](./LongConv/README.md)
   
@@ -202,13 +202,14 @@
 - [Peft](./Peft/README.md)
 
   - [Parameter-Efficient Fine-Tuning without Introducing New Latency](./Peft/001.md)
-
+- [Make Your Pre-trained Model Reversible: From Parameter to Memory Efficient Fine-Tuning](./Peft/002.md)
   
 
   
 
   
 
+  
   
   
   
