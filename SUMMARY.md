@@ -47,6 +47,7 @@
   - [Recurrent Memory Transformer](./Memory/009.md)
   - [Memorizing Transformers](./Memory/010.md)
   - [Scaling Transformer to 1M tokens and beyond with RMT](./Memory/011.md)
+  - [Adapting Language Models to Compress Contexts](./Memory/012.md)
   
 - [MHA](./MHA/README.md)
 
