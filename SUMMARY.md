@@ -151,12 +151,13 @@
   - [Normalized Attention Without Probability Cage](./Softmax/002.md)
 
 - [Others](./Others/README.md)
+  
   - [Accelerating Neural Transformer via an Average Attention Network](./Others/001.md)
   - [Do Transformer Modifications Transfer Across Implementations and Applications?](./Others/002.md)
   - [Object-Centric Learning with Slot Attention](./Others/003.md)
   - [Do Transformer Modifications Transfer Across Implementations and Applications?](./Others/004.md)
-  - [Why self-attention is Natural for Sequence-to-Sequence Problems? A Perspective from Symmetries](./Others/005.md)
-
+- [Why self-attention is Natural for Sequence-to-Sequence Problems? A Perspective from Symmetries](./Others/005.md)
+  
 - [LongConv](./LongConv/README.md)
   
   - [Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks](./LongConv/001.md)
@@ -192,12 +193,15 @@
   - [Cramming: Training a Language Model on a Single GPU in One Day](./FoundationModel/002.md)
 
 - [Inference](./Inference/README.md)
+  
   - [Extrapolation](./Inference/Extrapolation/README.md)
     - [Parallel Context Windows for Large Language Models](./Inference/Extrapolation/001.md)
   	- [Structured Prompting: Scaling In-Context Learning to 1,000 Examples](./Inference/Extrapolation/002.md)
     - [Naive Bayes-based Context Extension](./Inference/Extrapolation/003.md)
   
-- 
+- [Peft](./Peft/README.md)
+
+  - [Parameter-Efficient Fine-Tuning without Introducing New Latency](./Peft/001.md)
 
   
 
@@ -206,6 +210,6 @@
   
 
   
-
+  
   
 
