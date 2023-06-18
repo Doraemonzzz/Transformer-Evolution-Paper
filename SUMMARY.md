@@ -146,6 +146,7 @@
   - [Transcormer Transformer for Sentence Scoring with Sliding Language Modeling](./Pretrain/002.md)
   - [Optimus Organizing Sentences via Pre-trained Modeling of a Latent Space](./Pretrain/003.md)
   - [ELECTRA Pre-training Text Encoders as Discriminators Rather Than Generators](./Pretrain/004.md)
+  - [Cramming: Training a Language Model on a Single GPU in One Day](./Pretrain/005.md)
 
 - [Softmax](./Softmax/README.md)
 
@@ -189,11 +190,6 @@
 
   - [Neural Machine Translation in Linear Time](./CrossAttention/001.md)
 
-- [FoundationModel](./FoundationModel/README.md)
-
-  - [What Language Model to Train if You Have One Million GPU Hours?](./FoundationModel/001.md)
-  - [Cramming: Training a Language Model on a Single GPU in One Day](./FoundationModel/002.md)
-
 - [Inference](./Inference/README.md)
   
   - [Extrapolation](./Inference/Extrapolation/README.md)
@@ -205,14 +201,21 @@
 
   - [Parameter-Efficient Fine-Tuning without Introducing New Latency](./Peft/001.md)
   - [Make Your Pre-trained Model Reversible: From Parameter to Memory Efficient Fine-Tuning](./Peft/002.md)
+
+- [LLM](./LLM/README.md)
+
+  - [LLM Details Summary](./LLM/000.md)
+  - [What Language Model to Train if You Have One Million GPU Hours?](./LLM/001.md)
+
+- 
+
   
+
   
+
   
+
   
-  
-  
-  
-  
-  
+
   
 
